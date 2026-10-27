@@ -1,0 +1,51 @@
+                              NOTICE
+
+                              Kairos
+                    Copyright 2026 Homelab-Alpha
+
+   This product is licensed under the Apache License, Version 2.0
+   (the "License"). You may not use this product except in compliance
+   with the License. A copy of the License is included in this
+   distribution as the LICENSE file, and is also available at:
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+   implied. See the License for the specific language governing
+   permissions and limitations under the License.
+
+   ORIGINAL WORK
+
+   This product includes software and configuration developed by
+   Homelab-Alpha (<https://github.com/homelab-alpha>).
+
+   THIRD-PARTY COMPONENTS
+
+   This product may incorporate third-party open source software
+   components. Each component is subject to its own license terms.
+   A list of third-party dependencies and their respective licenses
+   can be found in the project's dependency configuration files
+   (e.g., package.json, go.mod) and is managed automatically by
+   Renovate (<https://docs.renovatebot.com/>).
+
+   ATTRIBUTION
+
+   If you distribute this product or a derivative work, you must
+   meet the following conditions:
+
+      (a) You must include a copy of the Apache License 2.0; and
+
+      (b) You must include this NOTICE file, or a modified version
+          that reflects your changes while retaining the original
+          attribution above; and
+
+      (c) You must clearly indicate any modifications you have made
+          to the original source.
+
+   CONTACT
+
+   For questions regarding attribution or licensing, contact:
+
+       Homelab-Alpha <homelab.api@gmail.com>

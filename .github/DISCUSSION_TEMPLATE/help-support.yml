@@ -1,0 +1,103 @@
+---
+labels: ["help", "P4: negligible"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ❓ Help & Support
+
+        Thank you for reaching out!
+        Please fill in as much detail as possible so the community and maintainers can help you effectively.
+
+        > [!TIP]
+        >
+        > Before submitting, consider checking the following resources — your question may already be answered:
+        >
+        > - [README](https://github.com/homelab-alpha/kairos/blob/main/README.md)
+        > - [Contributing Guidelines](https://github.com/homelab-alpha/kairos/blob/main/CONTRIBUTING.md)
+        > - [Existing Discussions](https://github.com/homelab-alpha/kairos/discussions)
+        > - [Existing Issues](https://github.com/homelab-alpha/kairos/issues?q=is%3Aissue+sort%3Acreated-desc)
+
+  - type: checkboxes
+    id: duplicate-check
+    attributes:
+      label: ⚠️ Please check if your question has already been asked
+      description: >
+        To avoid duplicate discussions, please search existing issues and discussions before submitting.
+      options:
+        - label: >
+            I have searched the [existing issues](https://github.com/homelab-alpha/kairos/issues?q=is%3Aissue+sort%3Acreated-desc) and [discussions](https://github.com/homelab-alpha/kairos/discussions) and found no similar questions.
+          required: true
+
+  - type: dropdown
+    id: help-category
+    validations:
+      required: true
+    attributes:
+      label: 🗂️ Category
+      description: >
+        Select the category that best describes your question or issue. This helps route your request to the right people.
+      options:
+        - "Installation & Setup"
+        - "Configuration"
+        - "Usage & Behavior"
+        - "Integrations"
+        - "Performance"
+        - "Error or Unexpected Output"
+        - "Other"
+
+  - type: textarea
+    id: problem-description
+    validations:
+      required: true
+    attributes:
+      label: 📝 Describe Your Question or Problem
+      description: >
+        Provide a clear and detailed explanation of what you need help with. Include any relevant context, screenshots, or examples.
+      placeholder: |
+        Describe your question or problem in detail. The more context you provide, the faster we can help.
+
+  - type: textarea
+    id: attempted-solutions
+    validations:
+      required: false
+    attributes:
+      label: 🔍 What Have You Already Tried?
+      description: >
+        List the steps you have already taken to resolve the issue or answer your question. Include both successful and unsuccessful attempts.
+      placeholder: |
+        e.g., I checked the README and found no relevant section. I searched existing discussions but found no matching question.
+
+  - type: textarea
+    id: logs-or-errors
+    validations:
+      required: false
+    attributes:
+      label: 📜 Logs or Error Messages
+      description: >
+        Share any relevant logs or error messages. Sensitive information such as tokens or passwords must be redacted before sharing.
+      render: shell
+      placeholder: |
+        Paste logs or error messages here. This will be automatically formatted into code, so no need for backticks.
+
+  - type: textarea
+    id: environment-setup
+    validations:
+      required: false
+    attributes:
+      label: 🖥️ Environment Setup
+      description: >
+        Provide information about your setup to help us understand your environment better, such as operating system, software versions, hosting environment, or runtime details.
+      placeholder: |
+        e.g., Ubuntu 24.04, Docker 27.x, Node.js 24, running on a local development machine.
+
+  - type: textarea
+    id: additional-context
+    validations:
+      required: false
+    attributes:
+      label: 📋 Additional Context
+      description: >
+        Share any additional context that might be relevant — such as configuration snippets, screenshots, or links to related discussions.
+      placeholder: |
+        e.g., I am trying to achieve X. I have already read Y and tried Z, but I am unclear on how to proceed.

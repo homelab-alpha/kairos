@@ -1,0 +1,30 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+### Added
+
+- Add Kairos, a Home Assistant Lovelace card for day-ahead electricity prices.
+  It reads the Nord Pool integration (Netherlands, 15-minute prices) and is
+  installed by hand.
+- Add the price, heatmap, and breakdown views with bar and line charts.
+- Add the ranges week, month, year, quarter, and custom periods, with a
+  resolution per range and week numbers.
+- Add zoom with separate options for desktop and touch, and for the buttons.
+- Add the cheapest summary with a countdown in the heatmap view.
+- Add display modes for desktop and laptop, tablet and smartphone, and kiosk,
+  and a compact layout below 720 px.
+- Add the visual editor with grouped sections, validation, and English and Dutch
+  translations.
+- Add the `source` option (`custom`, `nord_pool`, or `entsoe`) for the header.
+  The default header shows the Kairos logo and the title `Kairos`.
+- Add an experimental edit button and an experimental dashboard resource button
+  (Check, Update, Reload).
+- Add the Kairos brand: the name, the slogan `Charge at the right moment.`, and
+  the logo, app icons, and favicon as SVG files in `branding/`, with a brand
+  guide.

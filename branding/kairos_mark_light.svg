@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 64" width="100" height="64" role="img" aria-labelledby="t">
+  <title id="t">Kairos mark</title>
+  <g transform="translate(-26.00 -35.50) scale(1.0)">
+    <path d="M40 60 H52 V48 H64 V84 H76 V66 H88 V54 H100 V72 H112" fill="none" stroke="#1D1D1F" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="70" cy="84" r="7.5" fill="#30B0C7"/>
+  </g>
+</svg>

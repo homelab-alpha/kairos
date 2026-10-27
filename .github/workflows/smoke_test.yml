@@ -1,0 +1,141 @@
+---
+name: 🧪 Smoke Test
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+concurrency:
+  group: >
+    ${{
+      github.event_name == 'push' &&
+      format('smoke-push-{0}', github.ref) ||
+      github.event_name == 'pull_request' &&
+      format('smoke-pr-{0}', github.event.pull_request.number) ||
+      format('smoke-manual-{0}', github.run_id)
+    }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    name: 🧪 Run Browser Smoke Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: 🏁 Notify start of process
+        run: |
+          echo "::notice title=Workflow started::🧪 Smoke test started"
+          echo "::group::ℹ️ Execution context"
+          echo "Repository: ${{ github.repository }}"
+          echo "Workflow ref: $GITHUB_REF"
+          echo "Runner OS: ${{ runner.os }}"
+          echo "Event: ${{ github.event_name }}"
+          echo "::endgroup::"
+
+      - name: 🏁 Checkout repository source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      # The job always runs, so the required check is always reported. On a pull request the slow steps are skipped
+      # when no file that the smoke test depends on has changed. Pushes and manual runs always run the test.
+      - name: 🔎 Detect relevant changes
+        id: changes
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          set -Eeuo pipefail
+          RUN=true
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            CHANGED=$(git diff --name-only "origin/${BASE_REF}...HEAD")
+            echo "::group::📄 Changed files"
+            echo "$CHANGED"
+            echo "::endgroup::"
+            PATTERN='^(kairos_card\.js|tests/|package(-lock)?\.json$|\.npmrc$|\.github/workflows/smoke_test\.yml$)'
+            if ! grep -Eq "$PATTERN" <<< "$CHANGED"; then
+              RUN=false
+            fi
+          fi
+          echo "run=${RUN}" >> "$GITHUB_OUTPUT"
+          if [ "$RUN" = "true" ]; then
+            echo "::notice title=Smoke test::🧪 Relevant files changed, running the test"
+          else
+            echo "::notice title=Smoke test::⏭️ No relevant files changed, skipping the test"
+          fi
+
+      - name: 🟢 Set up Node.js
+        if: steps.changes.outputs.run == 'true'
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version-file: package.json
+          cache: npm
+
+      - name: 📦 Install dev tooling
+        if: steps.changes.outputs.run == 'true'
+        run: |
+          set -Eeuo pipefail
+          echo "::group::📦 npm ci (install scripts are off)"
+          npm ci --ignore-scripts
+          echo "::endgroup::"
+
+      - name: 🌐 Install Chromium
+        if: steps.changes.outputs.run == 'true'
+        run: |
+          set -Eeuo pipefail
+          echo "::group::🌐 Installing Chromium"
+          npx --no-install playwright-core install --with-deps chromium
+          echo "::endgroup::"
+
+      - name: 🧪 Run smoke test
+        id: smoke
+        if: steps.changes.outputs.run == 'true'
+        run: |
+          set -Eeuo pipefail
+          echo "::group::🧪 npm run test:smoke"
+          npm run test:smoke 2>&1 | tee smoke.log
+          echo "::endgroup::"
+
+      - name: 📊 Generate summary report
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+          TEST_RAN: ${{ steps.changes.outputs.run }}
+        run: |
+          set -Eeuo pipefail
+          if [ "$JOB_STATUS" = "success" ] && [ "$TEST_RAN" != "true" ]; then
+            {
+              echo "## 🧪 Smoke Test"
+              echo ""
+              echo "- **Status:** skipped"
+              echo "- **Reason:** no file that the smoke test depends on changed"
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          PASSED=$(grep -c '^PASS' smoke.log 2>/dev/null || true)
+          FAILED=$(grep -c '^FAIL' smoke.log 2>/dev/null || true)
+          {
+            echo "## 🧪 Smoke Test"
+            echo ""
+            echo "- **Status:** ${JOB_STATUS}"
+            echo "- **Checks passed:** ${PASSED:-0}"
+            echo "- **Checks failed:** ${FAILED:-0}"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          if [ "$JOB_STATUS" = "success" ]; then
+            echo "::notice title=Smoke test::✅ All checks passed"
+          else
+            echo "::error title=Smoke test::❌ The smoke test failed"
+          fi

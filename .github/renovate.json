@@ -1,0 +1,87 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "helpers:pinGitHubActionDigests",
+    ":semanticCommits",
+    ":rebaseStalePrs"
+  ],
+  "dependencyDashboard": true,
+  "osvVulnerabilityAlerts": true,
+  "vulnerabilityAlerts": {
+    "addLabels": ["security"]
+  },
+  "prConcurrentLimit": 0,
+  "prHourlyLimit": 0,
+  "timezone": "Europe/Amsterdam",
+  "schedule": [],
+  "rangeStrategy": "bump",
+  "ignoreDeps": [],
+  "ignorePaths": [],
+  "assignees": ["homelab-alpha"],
+  "reviewers": ["homelab-alpha"],
+  "automergeSchedule": [],
+  "automergeType": "pr",
+  "automergeStrategy": "squash",
+  "packageRules": [
+    {
+      "description": "Pin npm dependencies to exact versions, but not the engines range",
+      "matchManagers": ["npm"],
+      "rangeStrategy": "pin",
+      "matchDepTypes": ["dependencies", "devDependencies"]
+    },
+    {
+      "description": "Never automerge major/minor",
+      "matchUpdateTypes": ["major", "minor"],
+      "automerge": false
+    },
+    {
+      "description": "Automerge non-major updates (patch, pin, digest)",
+      "matchUpdateTypes": ["patch", "pin", "digest"],
+      "automerge": true,
+      "platformAutomerge": true,
+      "addLabels": ["automerge"]
+    },
+    {
+      "description": "Prioritize security updates",
+      "matchPackageNames": ["*"],
+      "isVulnerabilityAlert": true,
+      "prPriority": 100,
+      "minimumReleaseAge": "0 days"
+    },
+    {
+      "description": "Keep Node.js on major version 24 (LTS)",
+      "matchPackageNames": ["node", "@types/node"],
+      "matchManagers": ["npm", "nodenv", "dockerfile"],
+      "allowedVersions": "^24.0.0"
+    },
+    {
+      "description": "General labeling for all updates",
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch",
+        "pin",
+        "pinDigest",
+        "digest",
+        "lockFileMaintenance",
+        "rollback",
+        "bump",
+        "replacement"
+      ],
+      "addLabels": ["{{{updateType}}}", "{{{depName}}}"]
+    },
+    {
+      "description": "Mark dependencies",
+      "matchDepTypes": ["dependencies"],
+      "addLabels": ["dependencies"]
+    },
+    {
+      "description": "Mark dev dependencies",
+      "matchDepTypes": ["devDependencies"],
+      "addLabels": ["dev dependencies"]
+    }
+  ],
+  "internalChecksFilter": "strict",
+  "minimumReleaseAge": "7 days"
+}

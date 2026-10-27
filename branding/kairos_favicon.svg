@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>Kairos</title>
+  <style>
+    .line { stroke: #1D1D1F; }
+    .dot { fill: #30B0C7; }
+    @media (prefers-color-scheme: dark) {
+      .line { stroke: #F5F5F7; }
+      .dot { fill: #40CBE0; }
+    }
+  </style>
+  <path class="line" d="M6 26 H20 V16 H32 V46 H44 V30 H58" fill="none" stroke-width="7"
+    stroke-linecap="round" stroke-linejoin="round"/>
+  <circle class="dot" cx="38" cy="46" r="8"/>
+</svg>

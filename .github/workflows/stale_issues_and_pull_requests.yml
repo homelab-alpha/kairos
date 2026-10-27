@@ -1,0 +1,212 @@
+---
+name: 🕵️ Manage Stale Issues and Pull Requests
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+
+  workflow_dispatch:
+    inputs:
+      days_before_stale_issue:
+        description: "Days of inactivity before marking an issue as stale"
+        required: true
+        default: 11
+        type: number
+      days_before_close_issue:
+        description: "Days after stale before closing the issue"
+        required: true
+        default: 3
+        type: number
+      days_before_stale_pull_request:
+        description: "Days of inactivity before marking a pull request as stale"
+        required: true
+        default: 25
+        type: number
+      days_before_close_pull_request:
+        description: "Days after stale before closing the pull request"
+        required: true
+        default: 3
+        type: number
+
+permissions:
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: stale-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    name: 🔍 Process stale items
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    if: |
+      github.event.sender.type != 'Bot' &&
+      !contains(github.actor, '[bot]')
+
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      DAYS_BEFORE_STALE_ISSUES: ${{ github.event.inputs.days_before_stale_issue || '11' }}
+      DAYS_BEFORE_CLOSE_ISSUES: ${{ github.event.inputs.days_before_close_issue || '3' }}
+      DAYS_BEFORE_STALE_PRS: ${{ github.event.inputs.days_before_stale_pull_request || '25' }}
+      DAYS_BEFORE_CLOSE_PRS: ${{ github.event.inputs.days_before_close_pull_request || '3' }}
+
+    steps:
+      - name: 🏁 Notify start of process
+        run: |
+          set -Eeuo pipefail
+
+          echo "::notice title=Workflow started::🔍 Stale processing started"
+          echo "::group::ℹ️ Execution context"
+          echo "Repository: ${{ github.repository }}"
+          echo "Workflow ref: ${{ github.ref }}"
+          echo "Runner OS: ${{ runner.os }}"
+          echo "Issue stale threshold: $DAYS_BEFORE_STALE_ISSUES days"
+          echo "Issue close grace: $DAYS_BEFORE_CLOSE_ISSUES days"
+          echo "PR stale threshold: $DAYS_BEFORE_STALE_PRS days"
+          echo "PR close grace: $DAYS_BEFORE_CLOSE_PRS days"
+          echo "::endgroup::"
+
+      - name: 🔍 Process stale issues
+        id: process_issues
+        uses: actions/stale@4391f3da665fdf50b6810c1a66712fb9ba21aa93 # v11.0.0
+        with:
+          stale-issue-message: |
+            ## 👋 Just checking in
+
+            This issue has been inactive for **${{ env.DAYS_BEFORE_STALE_ISSUES }} days**, so we're giving it a gentle nudge 🕰️
+
+            ### ⏳ What happens next?
+
+            - If there's no activity within **${{ env.DAYS_BEFORE_CLOSE_ISSUES }} days**, this issue will be closed automatically.
+            - Any comment or update will remove the **stale** label.
+
+            Thanks for helping keep the project tidy! 🙌
+
+          close-issue-message: |
+            ## 🚫 Issue closed due to inactivity
+
+            This issue was automatically closed after being marked **stale** and receiving no further activity.
+
+            ### 💡 Still relevant?
+
+            - Feel free to reopen this issue, or
+            - Open a new one with updated context
+
+            Thanks for your understanding!
+
+          days-before-stale: "${{ env.DAYS_BEFORE_STALE_ISSUES }}"
+          days-before-close: "${{ env.DAYS_BEFORE_CLOSE_ISSUES }}"
+
+          stale-issue-label: "stale"
+
+          exempt-issue-labels: |
+            bug
+            discussion
+            discussion required
+            documentation
+            P0: critical
+            P1: high
+            P2: moderate
+            cannot reproduce
+            in progress
+            under development
+            security
+            security vulnerability
+            releaseblocker
+
+          exempt-issue-assignees: |
+            homelab-alpha
+
+          operations-per-run: 1000
+
+      - name: 🔍 Process stale pull requests
+        id: process_prs
+        uses: actions/stale@4391f3da665fdf50b6810c1a66712fb9ba21aa93 # v11.0.0
+        with:
+          stale-pr-message: |
+            ## 👋 Just checking in
+
+            This pull request has been inactive for **${{ env.DAYS_BEFORE_STALE_PRS }} days**, so we're giving it a gentle nudge 🕰️
+            No worries — we just want to check whether it's still in progress. 😊
+
+            ### ⏳ What happens next?
+
+            - If there's no activity within **${{ env.DAYS_BEFORE_CLOSE_PRS }} days**, this pull request will be closed automatically.
+            - Any new commit, review, or comment will remove the **stale** label.
+
+            Thanks again for your contribution — we appreciate the effort! 🚀
+
+          close-pr-message: |
+            ## 🚫 Pull request closed due to inactivity
+
+            This pull request was automatically closed after being marked **stale** and receiving no further activity.
+
+            ### 💡 Still relevant?
+
+            - Feel free to reopen the pull request, or
+            - Open a new one when you're ready.
+
+            Thanks for taking the time to contribute — we hope to see you again! 🙌
+
+          days-before-pr-stale: "${{ env.DAYS_BEFORE_STALE_PRS }}"
+          days-before-pr-close: "${{ env.DAYS_BEFORE_CLOSE_PRS }}"
+
+          stale-pr-label: "stale"
+
+          exempt-pr-assignees: |
+            homelab-alpha
+
+          exempt-pr-labels: |
+            in progress
+            under development
+            security
+            security vulnerability
+            releaseblocker
+
+          operations-per-run: 1000
+
+      - name: 🚨 Log execution failure
+        if: failure()
+        run: |
+          set -Eeuo pipefail
+
+          echo "::error title=Stale Management Failed::❌ The stale processing job encountered an error while updating issues or PRs. Check logs for API rate limits or permission issues."
+
+      - name: 📊 Generate job summary
+        if: always()
+        run: |
+          set -Eeuo pipefail
+
+          echo "::group::📊 Generating Summary Report"
+
+          ISSUE_STATUS="${{ steps.process_issues.outcome == 'success' && '✅ Success' || '❌ Failed' }}"
+          PR_STATUS="${{ steps.process_prs.outcome == 'success' && '✅ Success' || '❌ Failed' }}"
+
+          cat <<EOF >> "$GITHUB_STEP_SUMMARY"
+          ## 🕵️ Stale Management Summary
+
+          Execution completed at: $(date -u)
+
+          ### 📈 Execution Results
+
+          | Target           | Action    | Result        |
+          | :--------------- | :-------- | :------------ |
+          | 🎫 Issues        | Processed | $ISSUE_STATUS |
+          | 🏗️ Pull Requests | Processed | $PR_STATUS    |
+
+          ### ⚙️ Runtime Configuration
+
+          - **Issue Stale Threshold:** ${{ env.DAYS_BEFORE_STALE_ISSUES }} days
+          - **PR Stale Threshold:** ${{ env.DAYS_BEFORE_STALE_PRS }} days
+          - **Issue Close Grace Period:** ${{ env.DAYS_BEFORE_CLOSE_ISSUES }} days
+          - **PR Close Grace Period:** ${{ env.DAYS_BEFORE_CLOSE_PRS }} days
+
+          ### 🧩 Notes
+
+          - Workflow Run: [View Details](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          EOF
+
+          echo "::endgroup::"
