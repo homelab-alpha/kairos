@@ -6,8 +6,8 @@ Last updated: 2026-10-27. Card version: 0.1.0.
 
 The card is feature complete for the Nord Pool Netherlands source. Versions
 below 1.0.0 may change options and behavior without a migration path. This
-repository starts with a clean history; the first release is `v0.1.0`, made with
-the Release Manager.
+repository starts with a clean history. The first release, `v0.1.0`, was
+published on 2026-10-27 with the Release Manager.
 
 Done:
 
@@ -63,22 +63,31 @@ Done:
 - Page scroll over the breakdown tables no longer stalls (resize loop fixed;
   reproduced and checked with wheel events in Chromium).
 
+- The Release Manager in this repository (2026-10-27): a dry run passed, then
+  the real run (bump `minor`, release type `final`) published `v0.1.0` as the
+  latest release, with a verified tag and an announcement in GitHub Discussions.
+  The changelog pull request was merged.
+
+- The repository settings after the clean start (2026-10-27, checked by the
+  maintainer and through the GitHub API): the `main` ruleset is active; squash
+  merge is the only merge method; the Actions allow list, pinning to a full
+  commit SHA, read-only workflow permissions, and pull requests created by
+  Actions are set; secret scanning, push protection, Dependabot alerts, malware
+  alerts, security updates, and private vulnerability reporting are on; code
+  scanning (CodeQL) ran and has no alerts.
+
 ## Not verified
 
 - The cleanup made after the Home Assistant check (dead VAT switch code removed,
   seven long lines split, `kairos-card` named in the architecture notes) was
   checked with the smoke test and a comparison of the rendered HTML for 12
   configurations (identical), not in Home Assistant.
-- The Release Manager in this repository has not run yet; the first run is the
-  release of `v0.1.0`. In an earlier repository it ran on GitHub (dry run, real
-  run, preflight, changelog pull request, release, and announcement). Its
-  failure paths (an existing tag, an open changelog pull request, a leftover
-  branch, a failing pull request step) were tested with a stubbed `gh` only.
+- The failure paths of the Release Manager (an existing tag, an open changelog
+  pull request, a leftover branch, a failing pull request step) were tested with
+  a stubbed `gh` only.
 
 ## Open items
 
-- Check secret scanning, push protection, private vulnerability reporting, code
-  scanning, and the `main` ruleset after the repository is created.
 - Read ENTSO-E data (and its credentials) in the card; `source` only brands the
   header today.
 - Native Home Assistant sensor with the cheapest time blocks, for automations
@@ -88,5 +97,5 @@ Done:
 
 ## Next step
 
-Publish the release `v0.1.0`, merge its changelog pull request, and check the
-repository settings. Then continue with ENTSO-E and additional endpoints.
+Continue with ENTSO-E and additional endpoints, on a
+`dev/v<major>.<minor>.<patch>/...` branch for the next planned version.
