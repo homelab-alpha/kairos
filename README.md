@@ -611,7 +611,7 @@ kairos/
 │   ├── renovate.json                            # Renovate dependency automation
 │   └── super_linter.env                         # Super Linter environment configuration
 │
-├── branding/                                    # Brand assets (logo, icons, favicon) and brand guide
+├── branding/                                    # Brand assets (logo, icons, favicon, social preview) and brand guide
 │   ├── brand_guide.md                           # Name, slogan, colors, typography, usage rules
 │   ├── kairos_favicon.svg                       # Favicon (simplified, follows the theme)
 │   ├── kairos_icon_dark.svg                     # App icon, dark
@@ -621,7 +621,9 @@ kairos/
 │   ├── kairos_logo_tagline_dark.svg             # Logo with slogan, for dark backgrounds
 │   ├── kairos_logo_tagline_light.svg            # Logo with slogan, for light backgrounds
 │   ├── kairos_mark_dark.svg                     # Mark only, for dark backgrounds
-│   └── kairos_mark_light.svg                    # Mark only, for light backgrounds
+│   ├── kairos_mark_light.svg                    # Mark only, for light backgrounds
+│   ├── kairos_social_preview.png                # GitHub social preview (1280×640)
+│   └── kairos_social_preview.svg                # Source of the social preview
 │
 ├── docs/                                        # Project documentation (API, usage, guides)
 │   ├── architecture.md                          # How the card works internally

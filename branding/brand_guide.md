@@ -31,6 +31,8 @@ single accent color.
 | `kairos_logo_tagline_light.svg` | Logo with slogan on light backgrounds  |
 | `kairos_logo_tagline_dark.svg`  | Logo with slogan on dark backgrounds   |
 | `kairos_favicon.svg`            | Favicon, simplified, follows the theme |
+| `kairos_social_preview.png`     | GitHub social preview, 1280×640 px     |
+| `kairos_social_preview.svg`     | Source of the social preview           |
 
 All wordmark and slogan text is converted to outlines, so the files look the
 same on every system.
