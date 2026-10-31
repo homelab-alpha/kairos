@@ -68,6 +68,9 @@ a brand color as a raw color in the card.
 ## Clear space and minimum size
 
 - Keep clear space around the logo equal to the height of the dip dot.
+- `logo_light.svg` and `logo_dark.svg` include a 20 px protective border on
+  every side, so the README can show them at a fixed height of 100 px. Keep this
+  border and height in every repository.
 - Minimum width: 96 px for the logo, 16 px for the favicon, 24 px for the mark.
 - Below 24 px, use `favicon.svg` (four steps instead of six).
 

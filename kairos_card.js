@@ -923,7 +923,7 @@ function kairosEntsoEMark() {
 
 /**
  * Kairos mark: the price line with quarter-hour steps and one highlighted dip. The line follows the label color and
- * the dip uses the brand accent (see `.logo.brand` in the styles and assets/branding/brand_guide.md).
+ * the dip uses the brand accent (see `.logo.brand` in the styles and .github/branding/brand_guide.md).
  */
 function kairosBrandMark() {
   return (

@@ -46,8 +46,8 @@ installed by hand.
 Linting has two parts, to save Actions minutes.
 
 - **Pull requests** run `npm run lint -- origin/main` (workflow
-  `lint_pull_request.yml`, script `scripts/lint.sh`). It checks the changed
-  files with Prettier (JS, JSON, Markdown, YAML), textlint terminology
+  `lint_pull_request.yml`, script `.github/scripts/lint.sh`). It checks the
+  changed files with Prettier (JS, JSON, Markdown, YAML), textlint terminology
   (`.github/linters/.textlintrc`), and merge conflict markers. Run
   `npm run lint` to check every file. It uses the same configuration as Super
   Linter, so the results match for these checks. Every problem is shown with its
