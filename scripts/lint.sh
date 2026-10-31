@@ -77,7 +77,7 @@ pick() {
   done
 }
 
-mapfile -t pretty < <(pick '\.(js|cjs|json|md|yml|yaml)$')
+mapfile -t pretty < <(pick '\.(js|cjs|mjs|json|md|yml|yaml)$')
 mapfile -t prose < <(pick '\.(md|txt)$')
 
 echo "Files to check: ${#files[@]} (Prettier: ${#pretty[@]}, textlint: ${#prose[@]})"

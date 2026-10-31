@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Move the brand assets from `branding/` to `assets/branding/` and drop the
+  `kairos_` prefix from the filenames.
+- Replace the third-party README badges with self-hosted SVG badges, rendered
+  by the new `badges.yml` workflow and `scripts/generate_badges.py` to the
+  `badges` branch.
+- Sync the repository with the Blueprint template: the label sync retries and
+  skips unchanged labels, the dependency review comments on a pull request only
+  on failure, Prettier and the lint script also check `.mjs` files, and the
+  Terms of Service, the policies, and the style guide describe the current
+  lint, pinning, and license rules.
+
 ## [0.1.0] - 2026-10-27
 
 ### Added
@@ -28,5 +41,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add an experimental edit button and an experimental dashboard resource button
   (Check, Update, Reload).
 - Add the Kairos brand: the name, the slogan `Charge at the right moment.`, and
-  the logo, app icons, and favicon as SVG files in `branding/`, with a brand
+  the logo, app icons, and favicon as SVG files in `assets/branding/`, with a brand
   guide.

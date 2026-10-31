@@ -20,19 +20,19 @@ The mark is a price line with quarter-hour steps and one highlighted dip. The
 dot marks the cheapest moment. It is flat, uses round line caps, and has a
 single accent color.
 
-| File                            | Use                                    |
-| ------------------------------- | -------------------------------------- |
-| `kairos_icon_light.svg`         | App icon, avatar (light tile)          |
-| `kairos_icon_dark.svg`          | App icon, avatar (dark tile)           |
-| `kairos_mark_light.svg`         | Mark on light backgrounds              |
-| `kairos_mark_dark.svg`          | Mark on dark backgrounds               |
-| `kairos_logo_light.svg`         | Mark and wordmark on light backgrounds |
-| `kairos_logo_dark.svg`          | Mark and wordmark on dark backgrounds  |
-| `kairos_logo_tagline_light.svg` | Logo with slogan on light backgrounds  |
-| `kairos_logo_tagline_dark.svg`  | Logo with slogan on dark backgrounds   |
-| `kairos_favicon.svg`            | Favicon, simplified, follows the theme |
-| `kairos_social_preview.png`     | GitHub social preview, 1280×640 px     |
-| `kairos_social_preview.svg`     | Source of the social preview           |
+| File                     | Use                                    |
+| ------------------------ | -------------------------------------- |
+| `icon_light.svg`         | App icon, avatar (light tile)          |
+| `icon_dark.svg`          | App icon, avatar (dark tile)           |
+| `mark_light.svg`         | Mark on light backgrounds              |
+| `mark_dark.svg`          | Mark on dark backgrounds               |
+| `logo_light.svg`         | Mark and wordmark on light backgrounds |
+| `logo_dark.svg`          | Mark and wordmark on dark backgrounds  |
+| `logo_tagline_light.svg` | Logo with slogan on light backgrounds  |
+| `logo_tagline_dark.svg`  | Logo with slogan on dark backgrounds   |
+| `favicon.svg`            | Favicon, simplified, follows the theme |
+| `social_preview.png`     | GitHub social preview, 1280×640 px     |
+| `social_preview.svg`     | Source of the social preview           |
 
 All wordmark and slogan text is converted to outlines, so the files look the
 same on every system.
@@ -69,7 +69,7 @@ a brand color as a raw color in the card.
 
 - Keep clear space around the logo equal to the height of the dip dot.
 - Minimum width: 96 px for the logo, 16 px for the favicon, 24 px for the mark.
-- Below 24 px, use `kairos_favicon.svg` (four steps instead of six).
+- Below 24 px, use `favicon.svg` (four steps instead of six).
 
 ## Do and don't
 
