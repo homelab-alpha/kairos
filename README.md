@@ -2,8 +2,8 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/branding/logo_dark.svg" />
-    <img src="assets/branding/logo_light.svg" alt="Kairos" width="320" />
+    <source media="(prefers-color-scheme: dark)" srcset=".github/branding/logo_dark.svg" />
+    <img src=".github/branding/logo_light.svg" alt="Kairos" height="100" />
   </picture>
 </p>
 
@@ -571,6 +571,22 @@ kairos/
 │   │   ├── config.yml                           # Issue template configuration
 │   │   ├── i18n_issue.yml                       # Template for translation & localization
 │   │   └── security_report.yml                  # Template for security issues
+│   ├── branding/                                # Brand assets (logo, icons, favicon, social preview) and brand guide
+│   │   ├── brand_guide.md                       # Name, slogan, colors, typography, usage rules
+│   │   ├── favicon.svg                          # Favicon (simplified, follows the theme)
+│   │   ├── icon_dark.svg                        # App icon, dark
+│   │   ├── icon_light.svg                       # App icon, light
+│   │   ├── logo_dark.svg                        # Logo with wordmark, for dark backgrounds
+│   │   ├── logo_light.svg                       # Logo with wordmark, for light backgrounds
+│   │   ├── logo_tagline_dark.svg                # Logo with slogan, for dark backgrounds
+│   │   ├── logo_tagline_light.svg               # Logo with slogan, for light backgrounds
+│   │   ├── mark_dark.svg                        # Mark only, for dark backgrounds
+│   │   ├── mark_light.svg                       # Mark only, for light backgrounds
+│   │   ├── social_preview.png                   # GitHub social preview (1280×640)
+│   │   └── social_preview.svg                   # Source of the social preview
+│   ├── docs/                                    # Repository style guide (project docs are in the root `docs/`)
+│   │   ├── code_style_and_standards_guides.md   # Coding standards and style guidelines
+│   │   └── .placeholder                         # Placeholder for empty folder
 │   ├── linters/                                 # Configuration files for Super Linter
 │   │   ├── .checkov.yaml                        # Infrastructure-as-code security rules
 │   │   ├── .gitleaks.toml                       # Gitleaks secret scanning configuration
@@ -586,6 +602,11 @@ kairos/
 │   │   ├── review_process.md                    # Code review process
 │   │   ├── security.md                          # Security policy
 │   │   └── tests.md                             # Testing policy
+│   ├── scripts/                                 # Repository tooling (not project code)
+│   │   ├── generate_badges.py                   # Renders the README badges as SVG files
+│   │   ├── lint.sh                              # Pull request lint (Prettier, textlint, conflict markers)
+│   │   ├── setup_gpg.sh                         # Configures API or GPG signing for Git operations
+│   │   └── verify_signatures.sh                 # Verifies commit and tag signatures
 │   ├── workflows/                               # GitHub Actions workflows
 │   │   ├── badges.yml                           # Self-hosted README badges
 │   │   ├── codeql.yml                           # CodeQL security analysis
@@ -610,35 +631,13 @@ kairos/
 │   ├── renovate.json                            # Renovate dependency automation
 │   └── super_linter.env                         # Super Linter environment configuration
 │
-├── assets/                                      # Static project assets
-│   └── branding/                            # Brand assets (logo, icons, favicon, social preview) and brand guide
-│       ├── brand_guide.md                   # Name, slogan, colors, typography, usage rules
-│       ├── favicon.svg                      # Favicon (simplified, follows the theme)
-│       ├── icon_dark.svg                    # App icon, dark
-│       ├── icon_light.svg                   # App icon, light
-│       ├── logo_dark.svg                    # Logo with wordmark, for dark backgrounds
-│       ├── logo_light.svg                   # Logo with wordmark, for light backgrounds
-│       ├── logo_tagline_dark.svg            # Logo with slogan, for dark backgrounds
-│       ├── logo_tagline_light.svg           # Logo with slogan, for light backgrounds
-│       ├── mark_dark.svg                    # Mark only, for dark backgrounds
-│       ├── mark_light.svg                   # Mark only, for light backgrounds
-│       ├── social_preview.png               # GitHub social preview (1280×640)
-│       └── social_preview.svg               # Source of the social preview
-│
 ├── docs/                                        # Project documentation (API, usage, guides)
 │   ├── architecture.md                          # How the card works internally
-│   ├── code_style_and_standards_guides.md       # Coding standards and style guidelines
 │   ├── design_guidelines.md                     # Design standard: look, behavior, resources
 │   ├── decisions.md                             # Decision log
 │   ├── development.md                           # Set up and continue on any computer
 │   ├── images/                                  # README screenshots (desktop, kiosk, smartphone, editor)
 │   └── project_status.md                        # Current state, open items, next steps
-│
-├── scripts/                                     # Utility and automation shell scripts
-│   ├── generate_badges.py                       # Renders the README badges as SVG files
-│   ├── lint.sh                                  # Pull request lint (Prettier, textlint, conflict markers)
-│   ├── setup_gpg.sh                             # Configures API or GPG signing for Git operations
-│   └── verify_signatures.sh                     # Verifies commit and tag signatures
 │
 ├── tests/                                       # Automated test suite
 │   ├── helpers/                                 # Shared test helpers
@@ -678,25 +677,25 @@ automatically on push, pull request, and scheduled triggers.
 
 ### Workflows
 
-| Workflow                             | Trigger                   | Purpose                                              |
-| :----------------------------------- | :------------------------ | :--------------------------------------------------- |
-| `badges.yml`                         | Push, workflow run, daily | Renders the README badges to the `badges` branch     |
-| `codeql.yml`                         | Push, PR, schedule        | CodeQL static analysis for security vulnerabilities  |
-| `contributors.yml`                   | Push to `main`            | Auto-generates `CONTRIBUTORS.md`                     |
-| `dependency_review.yml`              | PR                        | Reviews dependency changes for known vulnerabilities |
-| `housekeeping.yml`                   | Weekly schedule, manual   | Cleans up old workflow runs and Actions caches       |
-| `issues.yml`                         | Issue events              | Automates issue labeling and triage                  |
-| `labels.yml`                         | Push, manual              | Synchronizes repository labels from `labels.yml`     |
-| `merge_conflicts.yml`                | Push, PR                  | Detects merge conflicts in open pull requests        |
-| `lint_pull_request.yml`              | PR, manual                | Runs `npm run lint` (Prettier, textlint)             |
-| `milestone_manager.yml`              | Manual                    | Automates milestone creation and lifecycle           |
-| `pull_request.yml`                   | PR events                 | Pull request automation and validation               |
-| `release_manager.yml`                | Manual                    | Automates GitHub Releases                            |
-| `signing_test.yml`                   | Manual                    | Tests API-based commit and tag signing               |
-| `smoke_test.yml`                     | Push, PR, manual          | Browser smoke test; on a PR only when it can change  |
-| `stale_issues_and_pull_requests.yml` | Schedule                  | Marks and closes stale issues and pull requests      |
-| `super_linter.yml`                   | Push to `main`, manual    | Runs Super Linter across the codebase                |
-| `unreproducible_issues.yml`          | Schedule                  | Manages issues that cannot be reproduced             |
+| Workflow                             | Trigger                 | Purpose                                              |
+| :----------------------------------- | :---------------------- | :--------------------------------------------------- |
+| `badges.yml`                         | Workflow run, daily     | Renders the README badges to the `badges` branch     |
+| `codeql.yml`                         | Push, PR, schedule      | CodeQL static analysis for security vulnerabilities  |
+| `contributors.yml`                   | Push to `main`          | Auto-generates `CONTRIBUTORS.md`                     |
+| `dependency_review.yml`              | PR                      | Reviews dependency changes for known vulnerabilities |
+| `housekeeping.yml`                   | Weekly schedule, manual | Cleans up old workflow runs and Actions caches       |
+| `issues.yml`                         | Issue events            | Automates issue labeling and triage                  |
+| `labels.yml`                         | Push, manual            | Synchronizes repository labels from `labels.yml`     |
+| `merge_conflicts.yml`                | Push, PR                | Detects merge conflicts in open pull requests        |
+| `lint_pull_request.yml`              | PR, manual              | Runs `npm run lint` (Prettier, textlint)             |
+| `milestone_manager.yml`              | Manual                  | Automates milestone creation and lifecycle           |
+| `pull_request.yml`                   | PR events               | Pull request automation and validation               |
+| `release_manager.yml`                | Manual                  | Automates GitHub Releases                            |
+| `signing_test.yml`                   | Manual                  | Tests API-based commit and tag signing               |
+| `smoke_test.yml`                     | Push, PR, manual        | Browser smoke test; on a PR only when it can change  |
+| `stale_issues_and_pull_requests.yml` | Schedule                | Marks and closes stale issues and pull requests      |
+| `super_linter.yml`                   | Push to `main`, manual  | Runs Super Linter across the codebase                |
+| `unreproducible_issues.yml`          | Schedule                | Manages issues that cannot be reproduced             |
 
 All workflows follow the standards documented in
 [`.github/policies/github_actions.md`](./.github/policies/github_actions.md),
@@ -704,22 +703,26 @@ including pinned action versions, concurrency controls, timeout limits, bot
 filtering, and structured job summaries.
 
 The README badges are not fetched from a third-party service. `badges.yml`
-renders them with `scripts/generate_badges.py` (Python standard library only)
-and publishes the SVG files to the `badges` branch, which the README links to
-through `github.com/<owner>/<repo>/raw/badges/`, which also works in a private
-repository for signed-in viewers with access. The Super Linter and CodeQL badges
-show the latest run on the default branch and refresh when those workflows
-finish (the `workflow_run` trigger lists their names, so update it when you
-rename them). The workflow creates the branch on its first run. The badges
-follow the colors in
-[`assets/branding/brand_guide.md`](./assets/branding/brand_guide.md) and switch
-to a dark variant with the system theme.
+renders them with `.github/scripts/generate_badges.py` (Python standard library
+only) and publishes the SVG files to the `badges` branch, which the README links
+to through `github.com/<owner>/<repo>/raw/badges/`, which also works in a
+private repository for signed-in viewers with access. The Super Linter and
+CodeQL badges show the latest run on the default branch. The workflow does not
+start on a push: it starts when Lint Repository or CodeQL finishes (the
+`workflow_run` trigger lists their names, so update it when you rename them),
+and the `check-workflows` job lets it continue only when both workflows ran and
+passed for that commit. A failed, cancelled, or skipped run (the workflows skip
+bot commits) leaves the badges as they are, and so does a repository where
+either workflow is disabled. The workflow creates the branch on its first run.
+The badges follow the colors in
+[`.github/branding/brand_guide.md`](./.github/branding/brand_guide.md) and
+switch to a dark variant with the system theme.
 
 ### Linting
 
-Pull requests are linted with `npm run lint` (`scripts/lint.sh`), which uses
-Prettier, textlint, and a merge conflict marker check with the configuration
-files below. Pushes to `main` run
+Pull requests are linted with `npm run lint` (`.github/scripts/lint.sh`), which
+uses Prettier, textlint, and a merge conflict marker check with the
+configuration files below. Pushes to `main` run
 [Super Linter](https://github.com/super-linter/super-linter), configured through
 `.github/super_linter.env`. The following linters are enabled by default: Bash,
 Bash Exec, Checkov, ENV, GitHub Actions (actionlint), Gitleaks, Git merge
@@ -742,17 +745,17 @@ minor updates require manual review.
 The repository includes internal policies that define how the project operates.
 These are documented in `.github/policies/` and in root-level files:
 
-| Document                                                                               | Purpose                                              |
-| :------------------------------------------------------------------------------------- | :--------------------------------------------------- |
-| [`.github/policies/github_actions.md`](./.github/policies/github_actions.md)           | Workflow structure, security, and logging standards  |
-| [`.github/policies/labels.md`](./.github/policies/labels.md)                           | Label naming, color strategy, and usage rules        |
-| [`.github/policies/logs.md`](./.github/policies/logs.md)                               | Logging conventions for workflows and scripts        |
-| [`.github/policies/review_process.md`](./.github/policies/review_process.md)           | Code review stages, criteria, and merge strategy     |
-| [`.github/policies/security.md`](./.github/policies/security.md)                       | Security scanning and vulnerability management       |
-| [`.github/policies/tests.md`](./.github/policies/tests.md)                             | Testing standards, structure, and conventions        |
-| [`docs/code_style_and_standards_guides.md`](./docs/code_style_and_standards_guides.md) | Coding style guidelines and Prettier configuration   |
-| [`GOVERNANCE.md`](./GOVERNANCE.md)                                                     | Project governance model and decision-making process |
-| [`MAINTAINERS.md`](./MAINTAINERS.md)                                                   | Maintainer roles, responsibilities, and current list |
+| Document                                                                                               | Purpose                                              |
+| :----------------------------------------------------------------------------------------------------- | :--------------------------------------------------- |
+| [`.github/policies/github_actions.md`](./.github/policies/github_actions.md)                           | Workflow structure, security, and logging standards  |
+| [`.github/policies/labels.md`](./.github/policies/labels.md)                                           | Label naming, color strategy, and usage rules        |
+| [`.github/policies/logs.md`](./.github/policies/logs.md)                                               | Logging conventions for workflows and scripts        |
+| [`.github/policies/review_process.md`](./.github/policies/review_process.md)                           | Code review stages, criteria, and merge strategy     |
+| [`.github/policies/security.md`](./.github/policies/security.md)                                       | Security scanning and vulnerability management       |
+| [`.github/policies/tests.md`](./.github/policies/tests.md)                                             | Testing standards, structure, and conventions        |
+| [`.github/docs/code_style_and_standards_guides.md`](./.github/docs/code_style_and_standards_guides.md) | Coding style guidelines and Prettier configuration   |
+| [`GOVERNANCE.md`](./GOVERNANCE.md)                                                                     | Project governance model and decision-making process |
+| [`MAINTAINERS.md`](./MAINTAINERS.md)                                                                   | Maintainer roles, responsibilities, and current list |
 
 ## Working with Claude
 

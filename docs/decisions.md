@@ -3,6 +3,25 @@
 Newest first. Add a dated entry for every decision that is not obvious from the
 code. The sections under "Foundations" describe how the project works today.
 
+## 2026-10-31: Repository files move to `.github/`
+
+- The repository tooling (`lint.sh`, `generate_badges.py`, `setup_gpg.sh`, and
+  `verify_signatures.sh`), the brand files, and the code style guide moved from
+  `scripts/`, `assets/branding/`, and `docs/` to `.github/scripts/`,
+  `.github/branding/`, and `.github/docs/`, as in the blueprint. The root stays
+  for the card (`kairos_card.js`), `docs/` (the project documentation), and
+  `tests/`.
+- `docs/` stays in the root on purpose: it holds the project memory (status,
+  decisions, architecture, design guidelines), not only the style guide.
+- The logo SVGs have a 20 px protective border and the README shows the logo at
+  a fixed height of 100 px, so it looks the same in every repository.
+- `badges.yml` runs only after Lint Repository and CodeQL ran and passed for the
+  same commit. The comment in `kairos_card.js` that names the brand guide has
+  the new path; `KAIROS_VERSION` is not raised, because the behavior is the
+  same.
+- `glob` and `minimatch` are overridden (exact versions) because `textlint`
+  pulls in versions with Dependabot alerts and has no newer release.
+
 ## 2026-10-31: Smoke tests use a fixed clock
 
 - The scroll test clicked a calendar day after today. The mock only has prices
@@ -140,9 +159,9 @@ code. The sections under "Foundations" describe how the project works today.
 
 ### Linting and tests
 
-- Pull requests run `npm run lint` (`scripts/lint.sh`): Prettier, textlint
-  terminology, and merge conflict markers, on the files changed in the pull
-  request, with the configuration of Super Linter (`.prettierrc`,
+- Pull requests run `npm run lint` (`.github/scripts/lint.sh`): Prettier,
+  textlint terminology, and merge conflict markers, on the files changed in the
+  pull request, with the configuration of Super Linter (`.prettierrc`,
   `.prettierignore`, `.github/linters/.textlintrc`). It also checks `npm audit`
   (high and critical) and the registry signatures. `npm run lint:fix` repairs
   simple problems; check `git diff` afterwards, because textlint rewrites words.

@@ -23,7 +23,7 @@ Done:
 - Compact layout below 720 px, which is how the card looks in the Home Assistant
   card configuration dialog.
 - Kairos brand: name, slogan, logo, icons, favicon, and brand guide in
-  `assets/branding/`.
+  `.github/branding/`.
 
 ## Verified
 

@@ -215,16 +215,16 @@ be asked to add coverage before the review is completed.
 In addition to functional tests, automated quality checks run on every pull
 request and on every push to `main`.
 
-| Check                     | Tool                               | Runs on               |
-| :------------------------ | :--------------------------------- | :-------------------- |
-| Code style and formatting | Prettier (`npm run lint`)          | Pull requests, `main` |
-| Grammar and terminology   | textlint (`npm run lint`)          | Pull requests, `main` |
-| Merge conflict markers    | `scripts/lint.sh` (`npm run lint`) | Pull requests, `main` |
-| Workflow syntax           | actionlint (Super Linter)          | `main`                |
-| Secret detection          | Gitleaks (Super Linter)            | `main`                |
-| Infrastructure security   | Checkov (Super Linter)             | `main`                |
-| Environment files         | ENV linter (Super Linter)          | `main`                |
-| Browser smoke test        | Playwright (`npm run test:smoke`)  | Pull requests, `main` |
+| Check                     | Tool                                       | Runs on               |
+| :------------------------ | :----------------------------------------- | :-------------------- |
+| Code style and formatting | Prettier (`npm run lint`)                  | Pull requests, `main` |
+| Grammar and terminology   | textlint (`npm run lint`)                  | Pull requests, `main` |
+| Merge conflict markers    | `.github/scripts/lint.sh` (`npm run lint`) | Pull requests, `main` |
+| Workflow syntax           | actionlint (Super Linter)                  | `main`                |
+| Secret detection          | Gitleaks (Super Linter)                    | `main`                |
+| Infrastructure security   | Checkov (Super Linter)                     | `main`                |
+| Environment files         | ENV linter (Super Linter)                  | `main`                |
+| Browser smoke test        | Playwright (`npm run test:smoke`)          | Pull requests, `main` |
 
 The browser smoke test runs on a pull request only when the card, `tests/`, or
 the package files change; the check is still reported, so it can stay required.
@@ -235,7 +235,7 @@ files are in `.github/linters/`. The required checks for a pull request are the
 browser smoke test, the npm lint, and GitGuardian.
 
 For more details on the linting setup, see
-[code_style_and_standards_guides.md](../../docs/code_style_and_standards_guides.md#linting).
+[code_style_and_standards_guides.md](../docs/code_style_and_standards_guides.md#linting).
 
 ## Revision History
 

@@ -17,7 +17,7 @@ translations, and a visual editor.
 - Planned: more endpoints and ENTSO-E. The default header (source `custom`)
   shows the Kairos logo and the title `Kairos`.
 
-The brand (name, slogan, logo, colors) is in `assets/branding/brand_guide.md`.
+The brand (name, slogan, logo, colors) is in `.github/branding/brand_guide.md`.
 
 More detail: `docs/design_guidelines.md` (the design standard; follow it for
 every UI change), `docs/architecture.md` (internals), `docs/decisions.md` (why),
@@ -36,7 +36,7 @@ npm run lint:fix                # repair formatting and terminology, then lint a
 Set `CHROMIUM_PATH` to use an installed Chromium for the smoke test.
 
 Linting has two parts. Pull requests run `npm run lint` (workflow
-`lint_pull_request.yml`, script `scripts/lint.sh`): Prettier, textlint
+`lint_pull_request.yml`, script `.github/scripts/lint.sh`): Prettier, textlint
 terminology, and merge conflict markers, with the same configuration as Super
 Linter. Pushes to `main` run the full Super Linter (`.github/super_linter.env`,
 workflow `super_linter.yml`), which adds actionlint, Gitleaks, Checkov, and the
