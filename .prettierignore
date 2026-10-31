@@ -62,9 +62,6 @@ TEMP*/
 .github/pull_request_template.md
 .github/super_linter.env
 
-# --- Generated Files ---
-CONTRIBUTORS.md
-
 # --- Environment & Config ---
 .env
 .env.*
@@ -79,3 +76,6 @@ playwright-report/
 public/
 resources/
 test-results/
+
+# --- Generated Files ---
+CONTRIBUTORS.md

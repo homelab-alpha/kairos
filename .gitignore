@@ -2,8 +2,13 @@
 
 # --- Tracked exceptions ---
 # Files matched by later patterns are explicitly tracked.
+!core
 !super_linter.env
-!super_linter.log
+
+# --- Local development files ---
+# Notes and the local Super Linter log stay out of the repository.
+notes.md
+super_linter.log
 
 # --- Database Files ---
 # MySQL/MariaDB
@@ -47,7 +52,6 @@ stack.env
 composer.lock
 
 # Folders
-.claude/settings.local.json
 .vscode/
 build/
 dist/
@@ -92,6 +96,14 @@ Thumbs.db
 temp*
 TEMP*
 
+# Python
+__pycache__/
+*.py[cod]
+
 # Vim/Neovim
 *.swo
 *.swp
+
+# --- Claude Code ---
+# Personal settings stay local.
+.claude/settings.local.json

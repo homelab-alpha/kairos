@@ -17,7 +17,7 @@ translations, and a visual editor.
 - Planned: more endpoints and ENTSO-E. The default header (source `custom`)
   shows the Kairos logo and the title `Kairos`.
 
-The brand (name, slogan, logo, colors) is in `branding/brand_guide.md`.
+The brand (name, slogan, logo, colors) is in `assets/branding/brand_guide.md`.
 
 More detail: `docs/design_guidelines.md` (the design standard; follow it for
 every UI change), `docs/architecture.md` (internals), `docs/decisions.md` (why),
@@ -94,7 +94,8 @@ These come from the repository blueprint and are mandatory.
   release without the maintainer's request. Version 1.0.0 is the first stable
   release; then contributions open.
 - Workflows follow `.github/policies/github_actions.md`: only `gh`, the GitHub
-  API, Bash, and Python, except `actions/*`, npm, and Dart Sass.
+  API, Bash, and Python, except the approved actions, npm, and Dart Sass. Every
+  action is pinned to a full commit SHA.
 - Formatting: Prettier. Markdown wraps at 80 columns, YAML at 120, code in
   `*.js` and `*.cjs` at 120.
 - Names: root community files keep their GitHub names (`README.md`). Other files

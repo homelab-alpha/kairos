@@ -66,5 +66,6 @@
 /.claude/                             @homelab-alpha
 /CLAUDE.md                            @homelab-alpha
 /kairos_card.js                       @homelab-alpha
+/.npmrc                               @homelab-alpha
 /package.json                         @homelab-alpha
 /package-lock.json                    @homelab-alpha

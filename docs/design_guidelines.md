@@ -242,7 +242,8 @@ The editor mirrors iOS Settings: grouped rows in inset sections.
 
 The brand is **Kairos**, with the slogan "Charge at the right moment." The logo
 is a price line with quarter-hour steps and one highlighted dip: the cheapest
-moment. Logo files, colors, and usage rules are in `branding/brand_guide.md`.
+moment. Logo files, colors, and usage rules are in
+`assets/branding/brand_guide.md`.
 
 - The brand colors (teal accent, ink, paper, night) are for brand assets only.
   The card UI uses the tokens in `KAIROS_TOK` and `KAIROS_HEAT`, never a brand
