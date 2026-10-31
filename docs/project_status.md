@@ -1,6 +1,6 @@
 # Project Status
 
-Last updated: 2026-10-27. Card version: 0.1.0.
+Last updated: 2026-10-31. Card version: 0.1.0.
 
 ## State
 
@@ -75,6 +75,10 @@ Done:
   Actions are set; secret scanning, push protection, Dependabot alerts, malware
   alerts, security updates, and private vulnerability reporting are on; code
   scanning (CodeQL) ran and has no alerts.
+
+- The Smoke Test no longer depends on the run date (2026-10-31): the scroll test
+  uses a fixed clock. It had failed on the last day of the month. Checked in
+  Chromium, 165 checks pass.
 
 ## Not verified
 
