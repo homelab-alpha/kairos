@@ -3,6 +3,14 @@
 Newest first. Add a dated entry for every decision that is not obvious from the
 code. The sections under "Foundations" describe how the project works today.
 
+## 2026-10-31: Smoke tests use a fixed clock
+
+- The scroll test clicked a calendar day after today. The mock only has prices
+  for today, so on the last day of a month no such day exists and the Smoke Test
+  failed on every pull request (found on the Node.js update, #7).
+- A smoke test that depends on the current date gets a fixed clock with the
+  `now` option of `installMock`, so the result does not depend on the run date.
+
 ## 2026-10-27: Clean start and the first release
 
 - Kairos starts in a clean repository with one commit that holds the code at
