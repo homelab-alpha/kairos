@@ -352,7 +352,8 @@ async function testFixedLine() {
 
 async function testScrollStays() {
   const { browser, page, errors } = await launch({ width: 1300, height: 700 });
-  await installMock(page, { view: "heatmap" });
+  // Fixed clock: the test picks a day after today, so it must not run on the last day of a month.
+  await installMock(page, { view: "heatmap" }, { now: "2026-10-15T12:00:00Z" });
   await page.evaluate(() => {
     const host = document.getElementById("host");
     const sc = document.createElement("div");
