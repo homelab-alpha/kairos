@@ -28,6 +28,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update the badges only after Lint Repository and CodeQL ran and passed for the
   same commit: remove the `push` trigger from `badges.yml` and add the
   `check-workflows` job.
+- Replace the deprecated `deny-licenses` option in `dependency_review.yml` with
+  an `allow-licenses` list of permissive licenses and CC BY-NC-SA 4.0, so GPL
+  and LGPL stay blocked.
+- Check development dependencies too in `dependency_review.yml`, by setting
+  `fail-on-scopes` to `runtime, development`.
 
 ### Security
 
