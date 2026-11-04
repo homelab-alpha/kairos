@@ -30,7 +30,8 @@ Shared permissions are in `.claude/settings.json`. Personal overrides go in
 1. Branch from `main`: `git switch -c feat/short-description`.
 2. Change the card. Bump `KAIROS_VERSION` (on a `dev/` branch the fourth number,
    for example `0.2.5.1`; the final version has three numbers).
-3. Add a line under `[Unreleased]` in `CHANGELOG.md`.
+3. Write the pull request title as a conventional commit. Update Changelog makes
+   the `[Unreleased]` entry from it after the merge.
 4. Run `npm run test:smoke` and Super Linter (see below).
 5. Commit with a Conventional Commit message and open a pull request.
 
@@ -83,7 +84,8 @@ Manager, Run workflow). Before the first run:
 - Turn on **Allow GitHub Actions to create and approve pull requests** in
   Settings, Actions, General, Workflow permissions. It is off by default, and
   without it the workflow cannot open the changelog pull request.
-- Write the changes of the release under `[Unreleased]` in `CHANGELOG.md`.
+- Check that `[Unreleased]` in `CHANGELOG.md` has the changes of the release.
+  Update Changelog adds them every 8 hours; start it by hand first when needed.
 
 How it works:
 
@@ -95,7 +97,7 @@ How it works:
    keeps an empty `[Unreleased]` above it, and uses that text as the release
    notes. When `[Unreleased]` is empty, it uses the commit list instead.
 4. It opens a pull request with the changelog change, publishes the release (a
-   prerelease for `alpha` and `beta`), and posts an announcement.
+   prerelease for `alpha`, `beta`, and `rc`), and posts an announcement.
 5. Merge the changelog pull request after the release is published.
 
 If the changelog pull request cannot be created, the release is still published.

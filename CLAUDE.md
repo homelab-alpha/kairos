@@ -39,9 +39,9 @@ Linting has two parts. Pull requests run `npm run lint` (workflow
 `lint_pull_request.yml`, script `.github/scripts/lint.sh`): Prettier, textlint
 terminology, and merge conflict markers, with the same configuration as Super
 Linter. Pushes to `main` run the full Super Linter (`.github/super_linter.env`,
-workflow `super_linter.yml`), which adds actionlint, Gitleaks, Checkov, and the
-others. Run Super Linter locally with the Docker command in `README.md`. For one
-file, `npx prettier --write <file>` uses the same `.prettierrc`.
+workflow `lint_repository.yml`), which adds actionlint, Gitleaks, Checkov, and
+the others. Run Super Linter locally with the Docker command in `README.md`. For
+one file, `npx prettier --write <file>` uses the same `.prettierrc`.
 
 ## Working agreement
 
@@ -86,11 +86,14 @@ These come from the repository blueprint and are mandatory.
 - Pull request descriptions use `.github/pull_request_template.md`: keep every
   heading and HTML comment, fill in each section, tick only what is true, and
   remove a section only where the template allows it.
-- Update `CHANGELOG.md` under `[Unreleased]` for every change that alters
-  behavior. Entries are imperative: `Add export command`.
+- The Update Changelog workflow (`update_changelog.yml`) adds an entry to
+  `CHANGELOG.md` under `[Unreleased]` for every merged pull request, made from
+  its title. It runs every 8 hours, not on every merge. Write the title as a
+  conventional commit (`feat(app): add export command`), and do not add the
+  entry by hand.
 - Versions below 1.0.0 may change options and behavior without a migration path.
   Releases are made with the Release Manager workflow (`release_manager.yml`);
-  the first is `v0.1.0` (bump `minor`, release type `final`). Never tag or
+  the first is `v0.1.0` (bump `minor`, release type `release`). Never tag or
   release without the maintainer's request. Version 1.0.0 is the first stable
   release; then contributions open.
 - Workflows follow `.github/policies/github_actions.md`: only `gh`, the GitHub
@@ -120,7 +123,7 @@ These come from the repository blueprint and are mandatory.
 - Every new option needs: a default in `KAIROS_DEFAULTS`, a row in
   `KAIROS_FORM`, a label in `KAIROS_ED` (`label`, in English and Dutch), a hint
   in `KAIROS_ED` (`hint`) when needed, validation in `setConfig`, a line in the
-  header comment, a row in the `README.md` tables, and a changelog entry.
+  header comment, and a row in the `README.md` tables.
 - Format the card with Prettier at width 120
   (`npx prettier@3 --write kairos_card.js`); CI checks it.
 

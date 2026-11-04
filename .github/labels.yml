@@ -44,6 +44,11 @@
     color: "8b949e",
     description: "Content is low-quality, unverified, or AI-generated without meaningful review.",
   }
+- {
+    name: "announcement",
+    color: "8250df",
+    description: "News or updates from the maintainers, such as releases; no action expected.",
+  }
 - { name: "approved", color: "2ea44f", description: "Approved and ready to merge." }
 - { name: "automerge", color: "2ea44f", description: "Eligible for automatic merging once all required checks pass." }
 - {
@@ -231,7 +236,7 @@
 - { name: "github-pages", color: "1f6feb", description: "Related to GitHub Pages deployment." }
 - {
     name: "github/codeql-action",
-    color: "d73a4a",
+    color: "1f6feb",
     description: "Dependency: GitHub CodeQL security analysis action updates.",
   }
 - {
@@ -253,6 +258,8 @@
     description: "Maintainers are actively seeking contributions to resolve this.",
   }
 - { name: "housekeeping", color: "8b949e", description: "Maintenance, cleanup, or chore tasks." }
+- { name: "hugo", color: "1f6feb", description: "Dependency: Hugo static site generator updates." }
+- { name: "i18n", color: "8250df", description: "Internationalization or translation issue; see also localized." }
 - { name: "in progress", color: "f2cc60", description: "Actively being worked on by an assigned contributor." }
 - { name: "in review", color: "f2cc60", description: "Currently under review; awaiting feedback or approval." }
 - {
@@ -327,11 +334,6 @@
     name: "performance regression",
     color: "d97706",
     description: "Introduces a measurable degradation in performance compared to a previous version.",
-  }
-- {
-    name: "playwright-core",
-    color: "1f6feb",
-    description: "Dependency: Playwright core browser automation library updates.",
   }
 - {
     name: "PR: depends on other",

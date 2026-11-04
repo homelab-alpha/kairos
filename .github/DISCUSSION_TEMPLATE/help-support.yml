@@ -89,7 +89,7 @@ body:
       description: >
         Provide information about your setup to help us understand your environment better, such as operating system, software versions, hosting environment, or runtime details.
       placeholder: |
-        e.g., Ubuntu 24.04, Docker 27.x, Node.js 24, running on a local development machine.
+        e.g., Ubuntu 24.04, Docker 27.x, Node.js 22, running on a local development machine.
 
   - type: textarea
     id: additional-context

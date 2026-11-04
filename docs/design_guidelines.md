@@ -303,6 +303,6 @@ What the card depends on, and what it must never depend on.
 - [ ] Contrast is at least 3:1 for data and 4.5:1 for text in both schemes.
 - [ ] Strings exist in English and Dutch.
 - [ ] New option: default, editor row, label, hint, validation, header comment,
-      and changelog entry.
+      and `README.md` row.
 - [ ] `KAIROS_VERSION` is bumped and Super Linter and `npm run test:smoke` pass.
 - [ ] This document is updated when a rule changed.
