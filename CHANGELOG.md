@@ -33,6 +33,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   and LGPL stay blocked.
 - Check development dependencies too in `dependency_review.yml`, by setting
   `fail-on-scopes` to `runtime, development`.
+- docs(status): record the v0.1.0 release [c281c1e](https://github.com/homelab-alpha/kairos/commit/c281c1e0222aeb33105bb9138d06b8ac48f6dadb) by [@homelab-alpha](https://github.com/homelab-alpha)
+- docs(branding): add the social preview [70181af](https://github.com/homelab-alpha/kairos/commit/70181afb98be862d79cc1cb5a8ea5eb6a54482e4) by [@homelab-alpha](https://github.com/homelab-alpha)
+- docs(branding): update social preview text [49e7945](https://github.com/homelab-alpha/kairos/commit/49e794536afaa9e2c185fb90a4de5b92847f1a20) by [@homelab-alpha](https://github.com/homelab-alpha)
+- test(smoke): fix the clock in the scroll test [a81c2d5](https://github.com/homelab-alpha/kairos/commit/a81c2d5111b61e6ff4672be76b12f6923977f5b1) by [@homelab-alpha](https://github.com/homelab-alpha)
+- docs(status): record the fixed smoke test clock [c8b7b86](https://github.com/homelab-alpha/kairos/commit/c8b7b866665882e20ab6cfd6a94263ad351cb122) by [@homelab-alpha](https://github.com/homelab-alpha)
+- chore: adopt the blueprint template updates [31c404d](https://github.com/homelab-alpha/kairos/commit/31c404dc024efef9125722471e27e26be443918a) by [@homelab-alpha](https://github.com/homelab-alpha)
+- chore(repo): sync the latest blueprint updates [1ad0d13](https://github.com/homelab-alpha/kairos/commit/1ad0d1300bd0048c698e81ea987027a19b245dcd) by [@homelab-alpha](https://github.com/homelab-alpha)
+- chore(workflows): replace deny-licenses with allow-licenses [2e594e5](https://github.com/homelab-alpha/kairos/commit/2e594e51c8fc67db9d5d11f8cd0dd5a7d29057c2) by [@homelab-alpha](https://github.com/homelab-alpha)
+- chore(blueprint): sync with the blueprint [404a89c](https://github.com/homelab-alpha/kairos/commit/404a89cb690b0cfe6bd738532885fa75e43eb59a) by [@homelab-alpha](https://github.com/homelab-alpha)
 
 ### Security
 
