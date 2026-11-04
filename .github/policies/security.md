@@ -3,7 +3,7 @@
 - **Policy ID:** ENG-SECURITY-001
 - **Version:** 1.0.0
 - **Status:** Active
-- **Effective Date:** 2026-10-22
+- **Effective Date:** 2026-10-29
 - **Owner:** Homelab-Alpha
 - **Applies To:** All repositories using GitHub Actions within the organization
 
@@ -103,8 +103,8 @@ mapped to the following levels:
    [private vulnerability patching](https://docs.github.com/en/code-security/tutorials/fix-reported-vulnerabilities/collaborate-in-a-fork)
    feature to develop the fix without public exposure.
 2. **Write a regression test** that fails before the fix and passes after.
-3. **Prepare a patch release** following the versioning conventions in
-   [`CONTRIBUTING.md`](../../CONTRIBUTING.md).
+3. **Prepare a patch release** following
+   [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 4. **Draft the advisory** on GitHub with full CVSS details, affected versions,
    patched versions, and remediation steps.
 5. **Request a CVE** via the GitHub Security Advisory if the vulnerability meets
@@ -134,7 +134,7 @@ brief post-incident review covering:
 
 - Root cause and how it was introduced.
 - How it was detected and by whom.
-- Whether existing controls (linting, CodeQL, Gitleaks, Dependabot) could have
+- Whether existing controls (linting, CodeQL, Gitleaks, Renovate) could have
   caught it earlier.
 - Process improvements to prevent similar issues.
 
@@ -145,4 +145,4 @@ CI configuration, contribution guidelines, or this policy.
 
 | Version | Date       | Author        | Changes          |
 | :------ | :--------- | :------------ | :--------------- |
-| 1.0.0   | 2026-10-22 | Homelab-Alpha | Initial release. |
+| 1.0.0   | 2026-10-29 | Homelab-Alpha | Initial release. |

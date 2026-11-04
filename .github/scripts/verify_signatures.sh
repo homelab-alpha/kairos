@@ -2,7 +2,7 @@
 
 # Filename:    verify_signatures.sh
 # Author:      Homelab-Alpha
-# Date:        2026-10-22
+# Date:        2026-10-29
 # Version:     1.0.0
 
 # Description: Verifies that recent commits and/or tags in a GitHub repository
