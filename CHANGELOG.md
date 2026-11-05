@@ -42,6 +42,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - chore(repo): sync the latest blueprint updates [1ad0d13](https://github.com/homelab-alpha/kairos/commit/1ad0d1300bd0048c698e81ea987027a19b245dcd) by [@homelab-alpha](https://github.com/homelab-alpha)
 - chore(workflows): replace deny-licenses with allow-licenses [2e594e5](https://github.com/homelab-alpha/kairos/commit/2e594e51c8fc67db9d5d11f8cd0dd5a7d29057c2) by [@homelab-alpha](https://github.com/homelab-alpha)
 - chore(blueprint): sync with the blueprint [404a89c](https://github.com/homelab-alpha/kairos/commit/404a89cb690b0cfe6bd738532885fa75e43eb59a) by [@homelab-alpha](https://github.com/homelab-alpha)
+- ci(workflows): request a reviewer on bot PRs [02bfacc](https://github.com/homelab-alpha/kairos/commit/02bfacc7c0e18c3d1ea978a94c12f09e2e3b5e13) by [@homelab-alpha](https://github.com/homelab-alpha)
+- chore(github): sync Hugo and Dart Sass rules [44598b7](https://github.com/homelab-alpha/kairos/commit/44598b7dbfd9a0e0a53731bbba460198b05ec2b9) by [@homelab-alpha](https://github.com/homelab-alpha)
+- chore(github): sync runners, Renovate, and linters [d4c42ac](https://github.com/homelab-alpha/kairos/commit/d4c42ac64f46746b330837e4286bdd3300ebe06c) by [@homelab-alpha](https://github.com/homelab-alpha)
 
 ### Security
 
