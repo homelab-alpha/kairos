@@ -216,3 +216,6 @@ code. The sections under "Foundations" describe how the project works today.
   `super-linter/super-linter/*`, `eps1lon/actions-label-merge-conflict@*`) with
   pinning to a full-length commit SHA, read-only workflow permissions, and only
   squash merging.
+- Workflows run on `ubuntu-26.04` instead of `ubuntu-latest`, and the pre-commit
+  hooks are pinned to a commit SHA with a `# frozen:` comment. Renovate does not
+  automerge: a maintainer reviews every update.

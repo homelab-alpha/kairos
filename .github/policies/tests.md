@@ -234,6 +234,9 @@ the full set on `main`. The Super Linter settings are in
 files are in `.github/linters/`. The required checks for a pull request are the
 browser smoke test, the npm lint, and GitGuardian.
 
+The hook revisions in `.pre-commit-config.yaml` are pinned to a full commit SHA,
+with the version in a `# frozen:` comment. Renovate keeps both in sync.
+
 For more details on the linting setup, see
 [code_style_and_standards_guides.md](../docs/code_style_and_standards_guides.md#linting).
 
