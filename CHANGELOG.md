@@ -45,6 +45,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ci(workflows): request a reviewer on bot PRs [02bfacc](https://github.com/homelab-alpha/kairos/commit/02bfacc7c0e18c3d1ea978a94c12f09e2e3b5e13) by [@homelab-alpha](https://github.com/homelab-alpha)
 - chore(github): sync Hugo and Dart Sass rules [44598b7](https://github.com/homelab-alpha/kairos/commit/44598b7dbfd9a0e0a53731bbba460198b05ec2b9) by [@homelab-alpha](https://github.com/homelab-alpha)
 - chore(github): sync runners, Renovate, and linters [d4c42ac](https://github.com/homelab-alpha/kairos/commit/d4c42ac64f46746b330837e4286bdd3300ebe06c) by [@homelab-alpha](https://github.com/homelab-alpha)
+- ci(workflows): run workflows for bots [0b18235](https://github.com/homelab-alpha/kairos/commit/0b182357f9a3bcab60608d77c1e723a1e1020805) by [@homelab-alpha](https://github.com/homelab-alpha)
+- ci(workflows): allow BlueOak-1.0.0 license [3fcf5c2](https://github.com/homelab-alpha/kairos/commit/3fcf5c26da87db241c7108720c72d94dfa011efd) by [@homelab-alpha](https://github.com/homelab-alpha)
 
 ### Security
 
