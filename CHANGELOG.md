@@ -47,6 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - chore(github): sync runners, Renovate, and linters [d4c42ac](https://github.com/homelab-alpha/kairos/commit/d4c42ac64f46746b330837e4286bdd3300ebe06c) by [@homelab-alpha](https://github.com/homelab-alpha)
 - ci(workflows): run workflows for bots [0b18235](https://github.com/homelab-alpha/kairos/commit/0b182357f9a3bcab60608d77c1e723a1e1020805) by [@homelab-alpha](https://github.com/homelab-alpha)
 - ci(workflows): allow BlueOak-1.0.0 license [3fcf5c2](https://github.com/homelab-alpha/kairos/commit/3fcf5c26da87db241c7108720c72d94dfa011efd) by [@homelab-alpha](https://github.com/homelab-alpha)
+- chore(labels): add dependency update labels [6bf7e72](https://github.com/homelab-alpha/kairos/commit/6bf7e728f753f8b64a81274c4107289406db5448) by [@homelab-alpha](https://github.com/homelab-alpha)
 
 ### Security
 
