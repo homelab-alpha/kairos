@@ -3,6 +3,17 @@
 Newest first. Add a dated entry for every decision that is not obvious from the
 code. The sections under "Foundations" describe how the project works today.
 
+## 2026-11-12: Renovate groups updates and automerges the small ones
+
+- Renovate opened too many separate pull requests. The configuration from the
+  blueprint now groups updates per ecosystem and update type, for example
+  `github actions (minor)`. Major updates stay separate.
+- Patch, pin, and digest updates of GitHub Actions, pre-commit hooks, and npm
+  dev dependencies are grouped and automerged (squash) once the required checks
+  pass. Minor, major, and security updates are never automerged.
+- The `main` ruleset lets the Renovate app bypass it for pull requests only, and
+  the repository allows auto-merge. `:rebaseStalePrs` is removed.
+
 ## 2026-10-31: Repository files move to `.github/`
 
 - The repository tooling (`lint.sh`, `generate_badges.py`, `setup_gpg.sh`, and
@@ -217,5 +228,7 @@ code. The sections under "Foundations" describe how the project works today.
   pinning to a full-length commit SHA, read-only workflow permissions, and only
   squash merging.
 - Workflows run on `ubuntu-26.04` instead of `ubuntu-latest`, and the pre-commit
-  hooks are pinned to a commit SHA with a `# frozen:` comment. Renovate does not
-  automerge: a maintainer reviews every update.
+  hooks are pinned to a commit SHA with a `# frozen:` comment. Renovate groups
+  updates by kind and automerges patch, pin, and digest updates of GitHub
+  Actions, pre-commit hooks, and npm dev dependencies once the checks pass. A
+  maintainer reviews every other update.
