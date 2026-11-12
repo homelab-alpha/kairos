@@ -743,8 +743,9 @@ The configuration in `.github/renovate.json` includes security update
 prioritization and a dependency dashboard. Renovate groups updates by kind.
 Renovate automerges patch, pin, and digest updates of GitHub Actions, pre-commit
 hooks, and npm dev dependencies once the checks pass. A maintainer reviews every
-other update. Pull requests are not limited to a schedule; the time zone is
-Europe/Amsterdam.
+other update. Pull Request Automation does not put the pull requests of Renovate
+back to draft, because a draft cannot automerge. Pull requests are not limited
+to a schedule; the time zone is Europe/Amsterdam.
 
 ## Policies and Standards
 
