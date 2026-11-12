@@ -49,6 +49,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ci(workflows): allow BlueOak-1.0.0 license [3fcf5c2](https://github.com/homelab-alpha/kairos/commit/3fcf5c26da87db241c7108720c72d94dfa011efd) by [@homelab-alpha](https://github.com/homelab-alpha)
 - chore(labels): add dependency update labels [6bf7e72](https://github.com/homelab-alpha/kairos/commit/6bf7e728f753f8b64a81274c4107289406db5448) by [@homelab-alpha](https://github.com/homelab-alpha)
 - chore(renovate): remove default assignees [d5acd48](https://github.com/homelab-alpha/kairos/commit/d5acd48c103f3a61f0a5fa3874cc49f826c9abe6) by [@homelab-alpha](https://github.com/homelab-alpha)
+- chore(renovate): group and automerge updates [fcea743](https://github.com/homelab-alpha/kairos/commit/fcea7434611ff433b6bed78011771624cc37068f) by [@homelab-alpha](https://github.com/homelab-alpha)
+
+### Fixed
+
+- fix(workflow): do not draft Renovate PRs [0c9a9ad](https://github.com/homelab-alpha/kairos/commit/0c9a9ade53600da8ac7e53940aace805a4326161) by [@homelab-alpha](https://github.com/homelab-alpha)
 
 ### Security
 
