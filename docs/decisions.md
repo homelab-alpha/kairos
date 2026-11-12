@@ -3,6 +3,15 @@
 Newest first. Add a dated entry for every decision that is not obvious from the
 code. The sections under "Foundations" describe how the project works today.
 
+## 2026-11-12: Renovate pull requests are not drafted
+
+- Pull Request Automation (`pull_request.yml`) put every new pull request back
+  to draft, including the ones of Renovate. A draft cannot automerge, so the
+  automerge rules never applied.
+- The draft step now skips new and reopened pull requests of `renovate[bot]`. It
+  still runs when a maintainer asks for changes. The condition is on that step
+  only; the other steps still run for Renovate.
+
 ## 2026-11-12: Renovate groups updates and automerges the small ones
 
 - Renovate opened too many separate pull requests. The configuration from the
