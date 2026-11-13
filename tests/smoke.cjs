@@ -255,7 +255,9 @@ async function testSummary() {
     ["tomorrow", true, "tomorrow"],
   ]) {
     const { browser, page, errors } = await launch({ width: 1300, height: 900 });
-    await installMock(page, { view: "heatmap", cheapest_quarters: 20, day }, { tomorrow });
+    // Fixed clock: today's window card only shows while a cheap window has not ended yet. The mock's cheapest
+    // window ends in the evening, so with the real clock the test fails late in the day.
+    await installMock(page, { view: "heatmap", cheapest_quarters: 20, day }, { tomorrow, now: "2026-10-15T08:00:00Z" });
     const info = await page.evaluate(() => {
       const root = window.card.shadowRoot;
       const q = (s) => root.querySelector(s);
