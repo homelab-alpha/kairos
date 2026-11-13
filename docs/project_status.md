@@ -79,6 +79,9 @@ Done:
 - The Smoke Test no longer depends on the run date (2026-10-31): the scroll test
   uses a fixed clock. It had failed on the last day of the month. Checked in
   Chromium, 165 checks pass.
+- The Smoke Test no longer depends on the time of day (2026-11-13): the cheapest
+  summary test uses a fixed clock. It had failed in the evening, when every
+  cheap window of the mock had ended. Checked in Chromium, 165 checks pass.
 
 ## Not verified
 
