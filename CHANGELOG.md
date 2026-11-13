@@ -50,6 +50,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - chore(labels): add dependency update labels [6bf7e72](https://github.com/homelab-alpha/kairos/commit/6bf7e728f753f8b64a81274c4107289406db5448) by [@homelab-alpha](https://github.com/homelab-alpha)
 - chore(renovate): remove default assignees [d5acd48](https://github.com/homelab-alpha/kairos/commit/d5acd48c103f3a61f0a5fa3874cc49f826c9abe6) by [@homelab-alpha](https://github.com/homelab-alpha)
 - chore(renovate): group and automerge updates [fcea743](https://github.com/homelab-alpha/kairos/commit/fcea7434611ff433b6bed78011771624cc37068f) by [@homelab-alpha](https://github.com/homelab-alpha)
+- docs(roadmap): update status and milestones [65b7420](https://github.com/homelab-alpha/kairos/commit/65b7420da18811c02e64790a049fc6399367b8f1) by [@homelab-alpha](https://github.com/homelab-alpha)
 
 ### Fixed
 
