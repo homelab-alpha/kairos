@@ -47,7 +47,7 @@ follows the Apple Human Interface Guidelines.
 | Ranges and calendar       | ✅ Complete    |
 | Zoom (desktop and touch)  | ✅ Complete    |
 | Visual editor             | ✅ Complete    |
-| Repository and CI         | 🔄 In progress |
+| Repository and CI         | ✅ Complete    |
 | Automated tests           | 🔄 In progress |
 | More price sources        | ⏳ Planned     |
 | First stable release      | ⏳ Planned     |
@@ -59,7 +59,7 @@ follows the Apple Human Interface Guidelines.
 **Goal:** A published, reproducible project that can be continued on any
 computer.
 
-- [ ] Publish the repository and cut the first release.
+- [x] Publish the repository and cut the first release.
 - [x] Document the zoom, button, and editor options in `README.md`.
 - [x] Extend the browser smoke test in `tests/`.
 
@@ -74,7 +74,7 @@ computer.
 
 **Goal:** More price sources and a stable option set.
 
-- [ ] A logo per source.
+- [x] A logo per source.
 - [ ] Support more endpoints and ENTSO-E.
 - [ ] Add a changelog entry and a test for every fixed bug.
 - [ ] Publish the card in the Home Assistant marketplace when it is ready.
@@ -104,8 +104,6 @@ milestone. Community feedback on priority is welcome via
   exposes the blocks and whether the current quarter is in one; switching
   devices stays in the user's own automations (see
   [Out of Scope](#out-of-scope)).
-- Check the repository security settings: secret scanning, push protection,
-  private vulnerability reporting, code scanning, and the ruleset for `main`.
 - ENTSO-E as a source: reading ENTSO-E data with a username, password, or API
   key. The card only reads sensors today (see [Out of Scope](#out-of-scope)), so
   reading data needs a decision first.
