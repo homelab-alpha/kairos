@@ -15,7 +15,7 @@
     "test:smoke": "node tests/smoke.cjs"
   },
   "devDependencies": {
-    "playwright-core": "1.65.0",
+    "playwright-core": "1.65.1",
     "prettier": "3.10.1",
     "textlint": "15.8.0",
     "textlint-filter-rule-allowlist": "4.0.0",
