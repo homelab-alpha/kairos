@@ -221,6 +221,7 @@ request and on every push to `main`.
 | Grammar and terminology   | textlint (`npm run lint`)                  | Pull requests, `main` |
 | Merge conflict markers    | `.github/scripts/lint.sh` (`npm run lint`) | Pull requests, `main` |
 | Workflow syntax           | actionlint (Super Linter)                  | `main`                |
+| Workflow security         | zizmor (Super Linter)                      | `main`                |
 | Secret detection          | Gitleaks (Super Linter)                    | `main`                |
 | Infrastructure security   | Checkov (Super Linter)                     | `main`                |
 | Environment files         | ENV linter (Super Linter)                  | `main`                |
@@ -244,5 +245,6 @@ For more details on the linting setup, see
 
 | Version | Date       | Author        | Changes                                                                                    |
 | :------ | :--------- | :------------ | :----------------------------------------------------------------------------------------- |
+| 1.2.0   | 2026-11-13 | Homelab-Alpha | Add zizmor to the linting checks.                                                          |
 | 1.1.0   | 2026-10-25 | Homelab-Alpha | Describe the smoke test, the mocked Home Assistant, and the two-part linting of this card. |
 | 1.0.0   | 2026-10-22 | Homelab-Alpha | Initial release.                                                                           |
