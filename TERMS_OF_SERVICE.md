@@ -72,8 +72,7 @@ Kairos is licensed under the [Apache License 2.0](./LICENSE). You are free to
 use, modify, and distribute the code in accordance with the terms of that
 license. Attribution is required as specified in the license.
 
-Contributions submitted to this project are governed by the same license, as
-described in [CONTRIBUTING.md](./CONTRIBUTING.md).
+Contributions submitted to this project are governed by the same license.
 
 ## 3. Vulnerability Reporting
 

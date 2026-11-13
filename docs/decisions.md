@@ -3,6 +3,19 @@
 Newest first. Add a dated entry for every decision that is not obvious from the
 code. The sections under "Foundations" describe how the project works today.
 
+## 2026-11-13: Workflows are checked by zizmor and managed in one place
+
+- The workflows are synced with the repository blueprint. Super Linter now runs
+  zizmor on `.github/workflows/` (configuration in
+  `.github/linters/zizmor.yml`), so a workflow must pass it before it is merged.
+  Values from `github` and `matrix` go through `env`, not into the script, and
+  every job asks for its own permissions.
+- `codeql.yml` follows the blueprint, with the language list of this card
+  (`actions` and `javascript-typescript`).
+- The Manage Workflows workflow (`manage_workflows.yml`) switches the other
+  workflows on or off. It has one checkbox for each workflow in this repository,
+  including `smoke_test.yml`.
+
 ## 2026-11-12: Renovate pull requests are not drafted
 
 - Pull Request Automation (`pull_request.yml`) put every new pull request back
