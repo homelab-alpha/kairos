@@ -53,6 +53,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - docs(roadmap): update status and milestones [65b7420](https://github.com/homelab-alpha/kairos/commit/65b7420da18811c02e64790a049fc6399367b8f1) by [@homelab-alpha](https://github.com/homelab-alpha)
 - chore(sync): sync shared files with blueprint [c11e856](https://github.com/homelab-alpha/kairos/commit/c11e85611328e2267df93a4284da06300980a178) by [@homelab-alpha](https://github.com/homelab-alpha)
 - test(smoke): fix the clock in the summary test [9719c2d](https://github.com/homelab-alpha/kairos/commit/9719c2d63fb7aada2ea2b72fa80fae43ecda4cb2) by [@homelab-alpha](https://github.com/homelab-alpha)
+- docs: add AI contribution policy [99f333f](https://github.com/homelab-alpha/kairos/commit/99f333f7340309002503951f58f0bddb3fc505d8) by [@homelab-alpha](https://github.com/homelab-alpha)
+- docs(readme): link AI contribution policy [246abda](https://github.com/homelab-alpha/kairos/commit/246abdac6368286e2d5e447665348cef409740f6) by [@homelab-alpha](https://github.com/homelab-alpha)
+- chore: sync files with the blueprint [f0c1827](https://github.com/homelab-alpha/kairos/commit/f0c1827b4c2678a3f23e3fd6622ea6ec72c7b5dd) by [@homelab-alpha](https://github.com/homelab-alpha)
 
 ### Fixed
 
