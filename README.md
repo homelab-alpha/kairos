@@ -596,6 +596,7 @@ kairos/
 │   │   ├── .yaml-lint.yml                       # YAML linting rules
 │   │   └── actionlint.yml                       # GitHub Actions workflow linting rules
 │   ├── policies/                                # Internal policies and documentation
+│   │   ├── ai_contribution_policy.md            # AI contribution policy (ENG-AI-001)
 │   │   ├── github_actions.md                    # Workflow standards (ENG-CI-001)
 │   │   ├── labels.md                            # Label color strategy and rules
 │   │   ├── logs.md                              # Logging policies and practices
@@ -754,6 +755,7 @@ These are documented in `.github/policies/` and in root-level files:
 
 | Document                                                                                               | Purpose                                              |
 | :----------------------------------------------------------------------------------------------------- | :--------------------------------------------------- |
+| [`.github/policies/ai_contribution_policy.md`](./.github/policies/ai_contribution_policy.md)           | Rules for AI-assisted contributions and code agents  |
 | [`.github/policies/github_actions.md`](./.github/policies/github_actions.md)                           | Workflow structure, security, and logging standards  |
 | [`.github/policies/labels.md`](./.github/policies/labels.md)                                           | Label naming, color strategy, and usage rules        |
 | [`.github/policies/logs.md`](./.github/policies/logs.md)                                               | Logging conventions for workflows and scripts        |
