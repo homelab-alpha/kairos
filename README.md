@@ -795,7 +795,9 @@ If you discover a bug or experience an issue not listed here, please
 > contributions are very welcome.
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for contribution guidelines, branch
-naming conventions, commit message format, and the review process.
+naming conventions, commit message format, and the review process. AI-assisted
+contributions follow the
+[AI Contribution Policy](./.github/policies/ai_contribution_policy.md).
 
 ## Support
 
