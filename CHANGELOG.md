@@ -57,6 +57,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - docs(readme): link AI contribution policy [246abda](https://github.com/homelab-alpha/kairos/commit/246abdac6368286e2d5e447665348cef409740f6) by [@homelab-alpha](https://github.com/homelab-alpha)
 - chore: sync files with the blueprint [f0c1827](https://github.com/homelab-alpha/kairos/commit/f0c1827b4c2678a3f23e3fd6622ea6ec72c7b5dd) by [@homelab-alpha](https://github.com/homelab-alpha)
 - chore(workflows): allow the PSF-2.0 license [e8b9d61](https://github.com/homelab-alpha/kairos/commit/e8b9d61895909640e78f68813badba7a7b1e53a7) by [@homelab-alpha](https://github.com/homelab-alpha)
+- chore(workflows): allow more MIT-like licenses [b3f611f](https://github.com/homelab-alpha/kairos/commit/b3f611f6f9cc4a75ec57fe5cc2c73d2a984d6e02) by [@homelab-alpha](https://github.com/homelab-alpha)
 
 ### Fixed
 
