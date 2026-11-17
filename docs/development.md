@@ -120,9 +120,9 @@ The dev tooling comes from npm, so the install is locked down:
 - `engine-strict=true` and `engines` keep installs on Node.js 24.
 - The pull request lint runs `npm audit --audit-level=high` and
   `npm audit signatures`, which checks the registry signatures.
-- Renovate waits 7 days after a release before it opens a pull request, so a
-  hijacked release is usually found and pulled first. Security updates are not
-  delayed.
+- Renovate opens a pull request for a new release at once, but its check stays
+  pending until the release is 3 days old, so a hijacked release is usually
+  found and pulled first. Security updates are not delayed.
 - The workflows have read-only permissions, do not keep credentials after
   checkout, and use actions pinned to a commit SHA.
 - Browsers: Playwright downloads Chromium with
