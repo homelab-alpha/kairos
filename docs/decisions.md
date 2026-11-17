@@ -3,6 +3,19 @@
 Newest first. Add a dated entry for every decision that is not obvious from the
 code. The sections under "Foundations" describe how the project works today.
 
+## 2026-11-17: Renovate groups npm updates and no longer automerges
+
+- Renovate opened several npm pull requests and stepped through older releases
+  (1.2.3, 1.2.4, and so on) before the newest one. The configuration from the
+  blueprint now puts all non-major npm updates in one `npm (non-major)` pull
+  request. Major updates stay separate.
+- `internalChecksFilter` is `none`: Renovate opens the pull request for the
+  newest version at once, and its check stays pending until the release is old
+  enough. `minimumReleaseAge` is 3 days instead of 7, which still covers the
+  72-hour window in which npm allows a package to be unpublished.
+- Automerge is removed. A maintainer reviews and merges every update. This
+  replaces the automerge rules of 2026-11-12.
+
 ## 2026-11-13: Workflows are checked by zizmor and managed in one place
 
 - The workflows are synced with the repository blueprint. Super Linter now runs
@@ -251,6 +264,5 @@ code. The sections under "Foundations" describe how the project works today.
   squash merging.
 - Workflows run on `ubuntu-26.04` instead of `ubuntu-latest`, and the pre-commit
   hooks are pinned to a commit SHA with a `# frozen:` comment. Renovate groups
-  updates by kind and automerges patch, pin, and digest updates of GitHub
-  Actions, pre-commit hooks, and npm dev dependencies once the checks pass. A
-  maintainer reviews every other update.
+  updates by kind, with all non-major npm updates in one pull request, and never
+  automerges. A maintainer reviews every update.
