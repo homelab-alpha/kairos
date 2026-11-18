@@ -59,6 +59,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - chore(workflows): allow the PSF-2.0 license [e8b9d61](https://github.com/homelab-alpha/kairos/commit/e8b9d61895909640e78f68813badba7a7b1e53a7) by [@homelab-alpha](https://github.com/homelab-alpha)
 - chore(workflows): allow more MIT-like licenses [b3f611f](https://github.com/homelab-alpha/kairos/commit/b3f611f6f9cc4a75ec57fe5cc2c73d2a984d6e02) by [@homelab-alpha](https://github.com/homelab-alpha)
 - chore(renovate): group npm updates in one pr [0eee888](https://github.com/homelab-alpha/kairos/commit/0eee888158982fd80259132c05622c251f5b9c7a) by [@homelab-alpha](https://github.com/homelab-alpha)
+- chore(renovate): group docker compose images [814d84e](https://github.com/homelab-alpha/kairos/commit/814d84e6b6bd55fa0a676418c17c5fd7644dc79f) by [@homelab-alpha](https://github.com/homelab-alpha)
 
 ### Fixed
 
