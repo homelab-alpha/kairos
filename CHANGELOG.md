@@ -64,6 +64,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - fix(workflow): do not draft Renovate PRs [0c9a9ad](https://github.com/homelab-alpha/kairos/commit/0c9a9ade53600da8ac7e53940aace805a4326161) by [@homelab-alpha](https://github.com/homelab-alpha)
+- fix(renovate): remove invalid security rule that disabled grouping [d008379](https://github.com/homelab-alpha/kairos/commit/d008379269e9b1125c982ae3d7bbf6eeaff4e239) by [@homelab-alpha](https://github.com/homelab-alpha)
+- fix(renovate): label all updates in a group [37c27d8](https://github.com/homelab-alpha/kairos/commit/37c27d8b02de2aaeac293e52db91709ec4dac5d7) by [@homelab-alpha](https://github.com/homelab-alpha)
 
 ### Security
 
