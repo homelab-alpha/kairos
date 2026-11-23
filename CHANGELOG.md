@@ -61,6 +61,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - chore(renovate): group npm updates in one pr [0eee888](https://github.com/homelab-alpha/kairos/commit/0eee888158982fd80259132c05622c251f5b9c7a) by [@homelab-alpha](https://github.com/homelab-alpha)
 - chore(renovate): group docker compose images [814d84e](https://github.com/homelab-alpha/kairos/commit/814d84e6b6bd55fa0a676418c17c5fd7644dc79f) by [@homelab-alpha](https://github.com/homelab-alpha)
 - chore(labels): add renovate dependency labels [4e04705](https://github.com/homelab-alpha/kairos/commit/4e047050648e8b9483ec60080b3edd862a5af224) by [@homelab-alpha](https://github.com/homelab-alpha)
+- docs: add conventional commits cheatsheet [065d78b](https://github.com/homelab-alpha/kairos/commit/065d78b9f9cf4e718aa25a0989d8343eaddf67c0) by [@homelab-alpha](https://github.com/homelab-alpha)
 
 ### Fixed
 
