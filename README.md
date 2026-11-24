@@ -213,10 +213,10 @@ Period and calendar menu:
 > Contributions are not accepted for now. When release v1.0.0 is published,
 > contributions are very welcome.
 
-Verified so far: the card in Chromium with a mocked Home Assistant. Not yet
-verified: a Home Assistant instance for all history ranges, and real iPhone and
-iPad touch gestures. See [`docs/project_status.md`](./docs/project_status.md)
-for the current state and open items.
+Verified so far: the card in Chromium with a mocked Home Assistant, and the code
+of version 0.1.0 in Home Assistant on real devices, reported by the maintainer.
+See [`docs/project_status.md`](./docs/project_status.md) for the current state
+and open items.
 
 ## Getting Started
 
