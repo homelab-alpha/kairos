@@ -98,7 +98,7 @@ const PERIOD_KEYS = {
   week: ["t_w", "n_w"],
   month: ["t_m", "n_m"],
 };
-const KAIROS_VERSION = "0.1.0";
+const KAIROS_VERSION = "0.1.1";
 /** A Home Assistant entity id: domain and object id, lowercase letters, digits, and underscores. */
 const KAIROS_ENTITY_ID = /^[a-z0-9_]+\.[a-z0-9_]+$/;
 
@@ -1299,7 +1299,8 @@ ha-card{display:block;background:var(--surface);color:var(--label);border:0;bord
 .sn{padding-top:10px}
 
 .pill{display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:10px;font-size:var(--t-c1);
-  font-weight:600;color:var(--pc);background:var(--fill);background:color-mix(in srgb,var(--pc) 14%,transparent)}
+  font-weight:600;color:var(--pc);color:color-mix(in srgb,var(--pc) 80%,var(--label));background:var(--fill);
+  background:color-mix(in srgb,var(--pc) 14%,transparent)}
 .pill .ic{width:14px;height:14px}
 .extra{display:flex;flex-direction:column;gap:20px;align-self:start}
 .extra:not(:empty){padding-top:calc(12px * var(--s))}
@@ -3048,14 +3049,14 @@ class KairosCard extends HTMLElement {
       .map(([g, keys]) => {
         const avail = keys.filter((k) => this._rangeAvailable(k));
         if (g === "grp_quarters") {
-          // Quarters: one segmented control (Q1-Q4); the full name is the accessible name.
+          // Quarters: one segmented control (Q1-Q4); the accessible name is the visible text and the full name.
           if (!avail.length) return "";
           const btns = avail
             .map((k) => {
               const full = this._esc(this._rangeLabel(k, true));
               return (
                 `<button type="button" class="qb" data-r="${k}" aria-pressed="${k === eff.day}" ` +
-                `aria-label="${full}" title="${full}">Q${k[1]}</button>`
+                `aria-label="Q${k[1]}, ${full}" title="${full}">Q${k[1]}</button>`
               );
             })
             .join("");
@@ -3285,7 +3286,7 @@ class KairosCard extends HTMLElement {
       `<button type="button" data-cal="${dir}" ` +
       `aria-label="${esc(label)}">${kairosIcon(dir < 0 ? "left" : "right")}</button>`;
     const head = upL
-      ? `<button type="button" class="pt" data-up="1" aria-label="${esc(upL)}">${esc(title)}` +
+      ? `<button type="button" class="pt" data-up="1" aria-label="${esc(`${title}, ${upL}`)}">${esc(title)}` +
         `${kairosIcon("down")}</button>`
       : `<b class="pt">${esc(title)}</b>`;
     const note = this._calAnchor
@@ -6025,7 +6026,7 @@ const KAIROS_EDITOR_CSS = `
 .er input,.er select{min-height:36px;padding:4px 12px;border:0;border-radius:10px;background:var(--fill);
   color:var(--label);
   font:inherit;font-size:var(--t-sub);outline:none;transition:box-shadow .15s}
-.er .abtn{flex:none;min-height:36px;padding:0 16px;border:0;border-radius:18px;background:var(--accent);color:#fff;
+.er .abtn{flex:none;min-height:36px;padding:0 16px;border:0;border-radius:18px;background:var(--accent);color:var(--onaccent);
   font:inherit;font-size:var(--t-foot);font-weight:600;cursor:pointer}
 .er .abtn:disabled{opacity:.5;cursor:default}
 .er .abtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}

@@ -1,6 +1,6 @@
 # Project Status
 
-Last updated: 2026-11-13. Card version: 0.1.0.
+Last updated: 2026-11-27. Card version: 0.1.1.
 
 ## State
 
@@ -85,6 +85,10 @@ Done:
 
 ## Not verified
 
+- Version 0.1.1 (accessibility fixes: contrast of the change pills and of the
+  editor "Check" button in dark mode, accessible names of the month title and
+  quarter buttons) was checked with the smoke test and axe in Chromium, not in
+  Home Assistant or with a screen reader.
 - The cleanup made after the Home Assistant check (dead VAT switch code removed,
   seven long lines split, `kairos-card` named in the architecture notes) was
   checked with the smoke test and a comparison of the rendered HTML for 12
