@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- docs(status): record the v0.1.1 release [8609bf8](https://github.com/homelab-alpha/kairos/commit/8609bf88515660306d5201c752825a0f03a0bc8a) by [@homelab-alpha](https://github.com/homelab-alpha)
+
 ## [0.1.1] - 2026-11-27
 
 ### Added
