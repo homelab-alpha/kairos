@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-11-27
+
 ### Added
 
 - feat(github): add accessibility checks [680a080](https://github.com/homelab-alpha/kairos/commit/680a080c05387d857d053c4e7ca4d15308104080) by [@homelab-alpha](https://github.com/homelab-alpha)
