@@ -63,6 +63,10 @@ Done:
 - Page scroll over the breakdown tables no longer stalls (resize loop fixed;
   reproduced and checked with wheel events in Chromium).
 
+- Version 0.1.1 (2026-11-27, reported by the maintainer): works as expected on
+  real devices. Devices: desktop, laptop, tablet, smartphone, and the ultrawide
+  monitor (kiosk). Browsers: Brave, Safari, and Firefox.
+
 - The Release Manager in this repository (2026-10-27): a dry run passed, then
   the real run (bump `minor`, release type `final`) published `v0.1.0` as the
   latest release, with a verified tag and an announcement in GitHub Discussions.
@@ -85,10 +89,7 @@ Done:
 
 ## Not verified
 
-- Version 0.1.1 (accessibility fixes: contrast of the change pills and of the
-  editor "Check" button in dark mode, accessible names of the month title and
-  quarter buttons) was checked with the smoke test and axe in Chromium, not in
-  Home Assistant or with a screen reader.
+- Version 0.1.1 was not tested with a screen reader or voice control.
 - The cleanup made after the Home Assistant check (dead VAT switch code removed,
   seven long lines split, `kairos-card` named in the architecture notes) was
   checked with the smoke test and a comparison of the rendered HTML for 12
