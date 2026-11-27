@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- feat(github): add accessibility checks [680a080](https://github.com/homelab-alpha/kairos/commit/680a080c05387d857d053c4e7ca4d15308104080) by [@homelab-alpha](https://github.com/homelab-alpha)
+
 ### Changed
 
 - Move the brand assets from `branding/` to `.github/branding/` and drop the
@@ -63,12 +67,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - chore(labels): add renovate dependency labels [4e04705](https://github.com/homelab-alpha/kairos/commit/4e047050648e8b9483ec60080b3edd862a5af224) by [@homelab-alpha](https://github.com/homelab-alpha)
 - docs: add conventional commits cheatsheet [065d78b](https://github.com/homelab-alpha/kairos/commit/065d78b9f9cf4e718aa25a0989d8343eaddf67c0) by [@homelab-alpha](https://github.com/homelab-alpha)
 - docs(readme): sync the status with project status [91ebcb5](https://github.com/homelab-alpha/kairos/commit/91ebcb565cbdf2f3f233d312cc306e7cd35e7040) by [@homelab-alpha](https://github.com/homelab-alpha)
+- docs(readme): add values to badge alt text [8685f77](https://github.com/homelab-alpha/kairos/commit/8685f77bcff0687cca44648f6a13bbe60aa7cfc3) by [@homelab-alpha](https://github.com/homelab-alpha)
+- docs: add accessibility statement [7283a3f](https://github.com/homelab-alpha/kairos/commit/7283a3f24277ca30716a5995f76057447904151f) by [@homelab-alpha](https://github.com/homelab-alpha)
+- docs: link the accessibility statement [26d452c](https://github.com/homelab-alpha/kairos/commit/26d452cbbc32ebffec7e92890e95160d3ac270d2) by [@homelab-alpha](https://github.com/homelab-alpha)
+- docs: document NO_COLOR support [9c906e1](https://github.com/homelab-alpha/kairos/commit/9c906e177a6e7b738bd3c08c25349f438360b972) by [@homelab-alpha](https://github.com/homelab-alpha)
+- docs: update the accessibility statement [623552c](https://github.com/homelab-alpha/kairos/commit/623552c382edf52f4a3e867fd0da738a92b6c7cc) by [@homelab-alpha](https://github.com/homelab-alpha)
 
 ### Fixed
 
 - fix(workflow): do not draft Renovate PRs [0c9a9ad](https://github.com/homelab-alpha/kairos/commit/0c9a9ade53600da8ac7e53940aace805a4326161) by [@homelab-alpha](https://github.com/homelab-alpha)
 - fix(renovate): remove invalid security rule that disabled grouping [d008379](https://github.com/homelab-alpha/kairos/commit/d008379269e9b1125c982ae3d7bbf6eeaff4e239) by [@homelab-alpha](https://github.com/homelab-alpha)
 - fix(renovate): label all updates in a group [37c27d8](https://github.com/homelab-alpha/kairos/commit/37c27d8b02de2aaeac293e52db91709ec4dac5d7) by [@homelab-alpha](https://github.com/homelab-alpha)
+- fix(card): fix four accessibility findings [9b0f300](https://github.com/homelab-alpha/kairos/commit/9b0f3001b0e20a3efeba09abe60fd4bf2436e9b2) by [@homelab-alpha](https://github.com/homelab-alpha)
 
 ### Security
 
