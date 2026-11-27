@@ -7,7 +7,8 @@ Last updated: 2026-11-27. Card version: 0.1.1.
 The card is feature complete for the Nord Pool Netherlands source. Versions
 below 1.0.0 may change options and behavior without a migration path. This
 repository starts with a clean history. The first release, `v0.1.0`, was
-published on 2026-10-27 with the Release Manager.
+published on 2026-10-27 with the Release Manager. The latest release, `v0.1.1`
+(accessibility fixes), was published on 2026-11-27.
 
 Done:
 
@@ -71,6 +72,11 @@ Done:
   the real run (bump `minor`, release type `final`) published `v0.1.0` as the
   latest release, with a verified tag and an announcement in GitHub Discussions.
   The changelog pull request was merged.
+
+- The release of `v0.1.1` (2026-11-27): a dry run passed, then the real run
+  (bump `patch`, release type `release`) published `v0.1.1` as the latest
+  release, with an announcement in GitHub Discussions. The changelog pull
+  request was merged.
 
 - The repository settings after the clean start (2026-10-27, checked by the
   maintainer and through the GitHub API): the `main` ruleset is active; squash
