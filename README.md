@@ -65,9 +65,10 @@ A Home Assistant Lovelace card for day-ahead electricity prices.
        1. [Currently Being Addressed](#currently-being-addressed)
    12. [Contributing](#contributing)
    13. [Support](#support)
-   14. [Security](#security)
-   15. [Roadmap](#roadmap)
-   16. [License](#license)
+   14. [Accessibility](#accessibility)
+   15. [Security](#security)
+   16. [Roadmap](#roadmap)
+   17. [License](#license)
 
   </p>
 </details>
@@ -808,6 +809,11 @@ contributions follow the
 
 For setup questions, troubleshooting, and general help, see
 [SUPPORT.md](./SUPPORT.md).
+
+## Accessibility
+
+Our accessibility goals, the known limitations, and how to report a barrier are
+described in [ACCESSIBILITY.md](./ACCESSIBILITY.md).
 
 ## Security
 

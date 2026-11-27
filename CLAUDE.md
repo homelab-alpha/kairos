@@ -21,7 +21,8 @@ The brand (name, slogan, logo, colors) is in `.github/branding/brand_guide.md`.
 
 More detail: `docs/design_guidelines.md` (the design standard; follow it for
 every UI change), `docs/architecture.md` (internals), `docs/decisions.md` (why),
-`docs/development.md` (setup on a new computer).
+`docs/development.md` (setup on a new computer), and `ACCESSIBILITY.md`
+(accessibility goals and expectations).
 
 ## Commands
 
