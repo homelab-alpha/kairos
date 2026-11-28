@@ -1,6 +1,6 @@
 # Project Status
 
-Last updated: 2026-11-27. Card version: 0.1.1.
+Last updated: 2026-11-28. Card version: 0.1.1.
 
 ## State
 
@@ -103,6 +103,8 @@ Done:
 - The failure paths of the Release Manager (an existing tag, an open changelog
   pull request, a leftover branch, a failing pull request step) were tested with
   a stubbed `gh` only.
+- The Release Manager that tags the release commit, and the escaping of
+  `@mentions` (2026-11-28), were not run on GitHub in this repository.
 
 ## Open items
 
