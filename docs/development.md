@@ -96,9 +96,11 @@ How it works:
 3. It moves the text of `[Unreleased]` into a new `## [version] - date` section,
    keeps an empty `[Unreleased]` above it, and uses that text as the release
    notes. When `[Unreleased]` is empty, it uses the commit list instead.
-4. It opens a pull request with the changelog change, publishes the release (a
-   prerelease for `alpha`, `beta`, and `rc`), and posts an announcement.
-5. Merge the changelog pull request after the release is published.
+4. For release type `release`, it makes one commit with the changelog and the
+   package version on `chore/changelog-<tag>`, and opens a pull request for it.
+5. It publishes the release, tagged on that commit (a prerelease for `alpha`,
+   `beta`, and `rc` makes no commit), and posts an announcement.
+6. Merge the changelog pull request after the release is published.
 
 If the changelog pull request cannot be created, the release is still published.
 The changelog commit is on the branch `chore/changelog-<tag>`: open the pull

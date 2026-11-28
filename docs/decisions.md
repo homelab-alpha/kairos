@@ -3,6 +3,16 @@
 Newest first. Add a dated entry for every decision that is not obvious from the
 code. The sections under "Foundations" describe how the project works today.
 
+## 2026-11-28: The release is tagged on the version commit
+
+- The workflows are synced with the repository blueprint. For release type
+  `release`, the Release Manager first makes the commit with `CHANGELOG.md` and
+  the package version on `chore/changelog-<tag>`, and tags that commit. The tag
+  and the release then have the new version. A pull request brings the commit to
+  `main`.
+- Release Manager and Update Changelog put a bare `@name` in a code span, so a
+  title does not mention an account.
+
 ## 2026-11-17: Renovate groups npm updates and no longer automerges
 
 - Renovate opened several npm pull requests and stepped through older releases
